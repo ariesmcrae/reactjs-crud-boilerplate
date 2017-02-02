@@ -1,0 +1,12 @@
+{
+  "name": "reactjs-starter-seed",
+  "version": "0.0.1",
+  "description": "ReactJs Starter Seed",
+  "main": "index.js",
+  "repository": "https://ariesmcrae:zqudly8a@bitbucket.org/ariesmcrae/reactjs-starter-seed.git",
+  "author": "Aries McRae <aries@ariesmcrae.com>",
+  "license": "Apache License Version 2.0",
+  "dependencies": {
+    "react": "^15.4.2"
+  }
+}

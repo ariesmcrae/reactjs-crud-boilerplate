@@ -1,0 +1,31 @@
+# Go to editorconfig.org to install the plugin for your appropriate editor.
+
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_training_whitespace = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{js,java}]
+charset = utf-8
+
+# 4 space indentation
+[*.{js,java}]
+indent_style = space
+indent_size = 4
+
+# Indentation override for all JS under lib directory
+[lib/**.js]
+indent_style = space
+indent_size = 4 
+
+# Matches the exact files either package.json or .travis.yml
+[{package.json}]
+indent_style = space
+indent_size = 4

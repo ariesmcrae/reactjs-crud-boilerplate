@@ -6,4 +6,7 @@
 * npm scripts
 * Node Security
 * Babel
-* Webpack 2
+* Webpack 1
+* ESLint, eslint-watch
+
+

@@ -6,7 +6,8 @@
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check startServer",
     "startServer": "babel-node buildScripts/server.js",
-    "security-check": "nsp check"
+    "security-check": "nsp check",
+    "lint": "esw webpack.config.* src buildScripts --color"
   },
   "main": "index.js",
   "repository": "https://bitbucket.org/ariesmcrae/reactjs-starter-seed.git",
@@ -24,6 +25,9 @@
     "babel-register": "^6.22.0",
     "chalk": "^1.1.3",
     "css-loader": "^0.26.1",
+    "eslint": "^3.14.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-watch": "^2.1.14",
     "express": "^4.14.1",
     "npm-run-all": "^4.0.1",
     "nsp": "^2.6.2",

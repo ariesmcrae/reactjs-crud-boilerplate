@@ -13,6 +13,7 @@
   "author": "Aries McRae <aries@ariesmcrae.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "numeral": "^2.0.4",
     "react": "^15.4.2"
   },
   "devDependencies": {
@@ -25,6 +26,8 @@
     "express": "^4.14.1",
     "npm-run-all": "^4.0.1",
     "nsp": "^2.6.2",
-    "open": "^0.0.5"
+    "open": "^0.0.5",
+    "webpack": "1.13.2",
+    "webpack-dev-middleware": "^1.10.0"
   }
 }

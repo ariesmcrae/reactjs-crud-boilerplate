@@ -5,4 +5,5 @@
 * Express server
 * npm scripts
 * Node Security
-* babel-node # needs babel-cli
+* Babel
+* Webpack 2

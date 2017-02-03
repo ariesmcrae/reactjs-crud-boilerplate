@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check startServer",
-    "startServer": "node buildScripts/server.js",
+    "startServer": "babel-node buildScripts/server.js",
     "security-check": "nsp check"
   },
   "main": "index.js",

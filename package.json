@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "ReactJs Starter Seed",
   "scripts": {
-    "prestart": "node buildScripts/startMessage.js",
+    "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check startServer",
     "startServer": "node buildScripts/server.js",
     "security-check": "nsp check"

@@ -2,6 +2,7 @@
 
 
 * ReactJs
+* Yarn
 * Express server
 * npm scripts
 * Node Security

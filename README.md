@@ -13,6 +13,9 @@
 * Test Assertion: Chai
 * Test Helper Library: JSDOM
 * Test Headless DOM: JSDOM
+* WhatWG Fetch
+
+
 
 
 

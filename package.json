@@ -4,20 +4,24 @@
   "description": "ReactJs Starter Seed",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check lint:watch test:watch startServer",
+    "start": "npm-run-all --parallel security-check lint:watch test:watch start-mockapi startServer",
     "startServer": "babel-node buildScripts/server.js",
     "security-check": "nsp check",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "yarn lint -- --watch",
     "test": "mocha --reporter progress --compilers buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "yarn test -- --watch"
+    "test:watch": "yarn test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/mockDataGenerator",
+    "prestart-mockapi": "yarn generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "main": "index.js",
   "repository": "https://bitbucket.org/ariesmcrae/reactjs-starter-seed.git",
   "author": "Aries McRae <aries@ariesmcrae.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "react": "^15.4.2"
+    "react": "^15.4.2",
+    "whatwg-fetch": "^2.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
@@ -33,6 +37,8 @@
     "eslint-watch": "^2.1.14",
     "express": "^4.14.1",
     "jsdom": "^9.9.1",
+    "json-schema-faker": "^0.4.0",
+    "json-server": "^0.9.4",
     "mocha": "^3.2.0",
     "npm-run-all": "^4.0.1",
     "nsp": "^2.6.2",

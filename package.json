@@ -4,12 +4,13 @@
   "description": "ReactJs Starter Seed",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check startServer lint:watch",
+    "start": "npm-run-all --parallel security-check lint:watch test:watch startServer",
     "startServer": "babel-node buildScripts/server.js",
     "security-check": "nsp check",
     "lint": "esw webpack.config.* src buildScripts --color",
-    "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\""
+    "lint:watch": "yarn lint -- --watch",
+    "test": "mocha --reporter progress --compilers buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "yarn test -- --watch"
   },
   "main": "index.js",
   "repository": "https://bitbucket.org/ariesmcrae/reactjs-starter-seed.git",

@@ -14,7 +14,8 @@
 * Test Helper Library: JSDOM
 * Test Headless DOM: JSDOM
 * WhatWG Fetch
-
+* Mock API Data: JSON Schema Faker
+* Mock HTTP: JSON Server
 
 
 

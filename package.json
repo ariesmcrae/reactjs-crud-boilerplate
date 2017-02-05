@@ -17,7 +17,6 @@
   "author": "Aries McRae <aries@ariesmcrae.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "numeral": "^2.0.4",
     "react": "^15.4.2"
   },
   "devDependencies": {

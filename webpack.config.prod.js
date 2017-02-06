@@ -9,17 +9,23 @@ export default {
 
     noInfo: false,
 
-    entry: [ path.resolve(__dirname, 'src/index')],
+    entry: { 
+        vendor: path.resolve(__dirname, 'src/vendor'),
+        main:   path.resolve(__dirname, 'src/index')
+    },
 
     target: 'web',
 
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
 
     plugins: [
+        //Use CommonsChunkPlugin to create a separate bundle of vendor libraries so that they're cached separately.
+        new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}), 
+
         // Create index.html from template. Will inject bundle.js into index.html. Minifi html as well.
         new HtmlWebpackPlugin({
             template: 'src/index.html',

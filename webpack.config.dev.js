@@ -1,4 +1,5 @@
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
     debug: true,
@@ -17,7 +18,13 @@ export default {
         filename: 'bundle.js'
     },
 
-    plugins: [],
+    plugins: [
+        // Create index.html from template. Will inject bundle.js into index.html
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            inject: true
+        })        
+    ],
 
     module: {
         loaders: [

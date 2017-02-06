@@ -52,6 +52,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "webpack": "1.13.2",
-    "webpack-dev-middleware": "^1.10.0"
+    "webpack-dev-middleware": "^1.10.0",
+    "webpack-md5-hash": "^0.0.5"
   }
 }

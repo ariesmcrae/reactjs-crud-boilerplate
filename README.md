@@ -16,7 +16,9 @@
 * WhatWG Fetch
 * Mock API Data: JSON Schema Faker
 * Mock HTTP: JSON Server
-* Dynamic HTML generation: HTML Webpack plugin
 
+### Webpack plugins
+* Dynamic HTML generation: html-webpack-plugin
+* CSS minification: extract-text-webpack-plugin
 
 

@@ -1,5 +1,11 @@
 # reactjs-starter-seed
 
+* React crud boilerplate 
+* aka starter kit
+* aka Starter project
+* aka Seed
+
+### Libraries used
 
 * ReactJs
 * Yarn

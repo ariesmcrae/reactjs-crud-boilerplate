@@ -22,3 +22,5 @@
 * CSS minification: extract-text-webpack-plugin
 
 
+### Credits
+This is a fork of `javascript-development-environment` by @coreyhouse

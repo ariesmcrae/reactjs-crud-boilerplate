@@ -21,9 +21,7 @@ export default {
             template: 'src/index.html',
             inject: true
         }),
-        new webpack.LoaderOptionsPlugin({
-            debug: true
-        })        
+        new webpack.LoaderOptionsPlugin({ debug: true })        
     ],
 
     module: {

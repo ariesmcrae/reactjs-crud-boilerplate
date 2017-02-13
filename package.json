@@ -20,9 +20,9 @@
     "postbuild": "babel-node buildScripts/serverProd.js"
   },
   "main": "index.js",
-  "repository": "https://bitbucket.org/ariesmcrae/reactjs-starter-seed.git",
-  "author": "Aries McRae <aries@ariesmcrae.com>",
-  "license": "Apache-2.0",
+  "repository": "https://github.com/ariesmcrae/reactjs-crud-starter-kit.git",
+  "author": "Aries McRae <github@ariesmcrae.com>",
+  "license": "MIT",
   "dependencies": {
     "react": "^15.4.2",
     "whatwg-fetch": "^2.0.2"

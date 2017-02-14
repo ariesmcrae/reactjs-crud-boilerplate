@@ -6,7 +6,6 @@
 * aka Seed
 
 ### Libraries used
-
 * ReactJs
 * Yarn
 * Express server
@@ -22,10 +21,13 @@
 * WhatWG Fetch
 * Mock API Data: JSON Schema Faker
 * Mock HTTP: JSON Server
+* `webpack-hot-middleware` - hot module replacement when using `ExpressJs` as a server, rather than using `webpack-dev-server`.
 
 ### Webpack plugins
 * Dynamic HTML generation: html-webpack-plugin
 * CSS minification: extract-text-webpack-plugin
+
+
 
 
 ### Credits

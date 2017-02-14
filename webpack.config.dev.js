@@ -5,7 +5,7 @@ import webpack from 'webpack';
 export default {
     devtool: 'inline-source-map',
 
-    entry: [ 'react-hot-loader/patch', 'webpack/hot/only-dev-server', resolve(__dirname, 'src/index')],
+    entry: [ 'webpack-hot-middleware/client?reload=true', resolve(__dirname, 'src/index')],
 
     target: 'web',
 
@@ -23,7 +23,6 @@ export default {
         }),
         new webpack.LoaderOptionsPlugin({ debug: true }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
         new webpack.NoErrorsPlugin()
     ],
 

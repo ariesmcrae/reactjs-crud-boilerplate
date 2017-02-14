@@ -3,21 +3,21 @@
   "version": "0.0.1",
   "description": "ReactJs Starter Seed",
   "scripts": {
-    "prestart": "babel-node buildScripts/startMessage.js",
+    "prestart": "babel-node scripts/startMessage.js",
     "start": "npm-run-all --parallel security-check lint:watch test:watch start-mockapi startServerDev",
-    "startServerDev": "babel-node buildScripts/serverDev.js",
+    "startServerDev": "babel-node scripts/serverDev.js",
     "security-check": "nsp check",
-    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint": "esw webpack.config.* src scripts --color",
     "lint:watch": "yarn lint -- --watch",
-    "test": "mocha --reporter progress --compilers buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test": "mocha --reporter progress --compilers scripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "yarn test -- --watch",
-    "generate-mock-data": "babel-node buildScripts/mockDataGenerator",
+    "generate-mock-data": "babel-node scripts/mockDataGenerator",
     "prestart-mockapi": "yarn generate-mock-data",
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
-    "build": "babel-node buildScripts/build.js",
-    "postbuild": "babel-node buildScripts/serverProd.js"
+    "build": "babel-node scripts/build.js",
+    "postbuild": "babel-node scripts/serverProd.js"
   },
   "main": "index.js",
   "repository": "https://github.com/ariesmcrae/reactjs-crud-starter-kit.git",
@@ -27,7 +27,6 @@
     "bootstrap": "^3.3.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-hot-loader": "3.0.0-beta.6",
     "whatwg-fetch": "^2.0.2"
   },
   "devDependencies": {
@@ -58,6 +57,7 @@
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
+    "webpack-hot-middleware": "^2.16.1",
     "webpack-md5-hash": "^0.0.5"
   }
 }

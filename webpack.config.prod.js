@@ -60,4 +60,4 @@ export default {
             { test: /\.css$/, use: ExtractTextPlugin.extract('css-loader?sourceMap') }
         ]
     }
-}
+};

@@ -18,6 +18,6 @@ describe('index.html', () => {
             done();
             window.close();
         });
-    })
-})
+    });
+});
 

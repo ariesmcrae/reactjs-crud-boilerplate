@@ -1,4 +1,4 @@
-import path from 'path';
+import {resolve} from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
@@ -8,14 +8,14 @@ export default {
     devtool: 'source-map',
 
     entry: { 
-        vendor: path.resolve(__dirname, 'src/vendor'),
-        main:   path.resolve(__dirname, 'src/index')
+        vendor: resolve(__dirname, 'src/vendor'),
+        main:   resolve(__dirname, 'src/index')
     },
 
     target: 'web',
 
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: resolve(__dirname, 'dist'),
         publicPath: '/',
         filename: '[name].[chunkhash].js'
     },
@@ -56,7 +56,7 @@ export default {
 
     module: {
         rules: [
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+            { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
             { test: /\.css$/, use: ExtractTextPlugin.extract('css-loader?sourceMap') }
         ]
     }

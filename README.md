@@ -24,6 +24,7 @@
 * `webpack-hot-middleware` - hot module replacement when using `ExpressJs` as a server, rather than using `webpack-dev-server`.
 * `eslint-plugin-react`
 * JSDOM
+* react-router 3.x
 
 ### Webpack plugins
 * Dynamic HTML generation: html-webpack-plugin

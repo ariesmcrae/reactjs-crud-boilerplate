@@ -23,7 +23,7 @@ export default {
         }),
         new webpack.LoaderOptionsPlugin({ debug: true }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ],
 
     module: {

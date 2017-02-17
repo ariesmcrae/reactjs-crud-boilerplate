@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import Header from './common/Header';
+import Header from './Header';
 
 export default class App extends React.Component {
     render() {

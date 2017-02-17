@@ -4,16 +4,13 @@
   "description": "ReactJs Starter Seed",
   "scripts": {
     "prestart": "babel-node scripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check lint:watch test:watch start-mockapi startServerDev",
+    "start": "npm-run-all --parallel security-check lint:watch test:watch startServerDev",
     "startServerDev": "babel-node scripts/serverDev.js",
     "security-check": "nsp check",
     "lint": "esw webpack.config.* src scripts --color",
     "lint:watch": "yarn lint -- --watch",
     "test": "mocha --reporter progress --compilers scripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "yarn test -- --watch",
-    "generate-mock-data": "babel-node scripts/mockDataGenerator",
-    "prestart-mockapi": "yarn generate-mock-data",
-    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node scripts/build.js",
@@ -27,8 +24,7 @@
     "bootstrap": "^3.3.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "^3.0.2",
-    "whatwg-fetch": "^2.0.2"
+    "react-router": "^3.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
@@ -50,7 +46,6 @@
     "file-loader": "^0.10.0",
     "html-webpack-plugin": "^2.28.0",
     "jsdom": "^9.11.0",
-    "json-schema-faker": "^0.4.0",
     "json-server": "^0.9.4",
     "mocha": "^3.2.0",
     "npm-run-all": "^4.0.1",

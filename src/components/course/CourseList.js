@@ -5,10 +5,12 @@ export default function CourseList({courses}) {
     return(
         <table className="table">
             <thead>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Category</th>
-                <th>Length</th>                
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Length</th>                
+                </tr>
             </thead>
 
             <tbody>

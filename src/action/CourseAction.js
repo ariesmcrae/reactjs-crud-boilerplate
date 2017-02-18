@@ -11,7 +11,16 @@ function getCoursesResponse(courses) {
 
 
 export function getCoursesAction() {
-    return function(dispatch) {
-        console.log('todo');
+    console.log('xxxxxxxxaction1 getCoursesAction');
+    return(dispatch) => {
+    console.log('xxxxxxxxaction2 getCoursesAction');        
+        return CourseApi.getAllCourses()
+            .then(courses => {
+                console.log('xxxxxxxxaction3 getCoursesAction');                        
+                dispatch(getCoursesResponse(courses));
+                console.log('xxxxxxxxaction4 getCoursesAction');                                        
+            }).catch(error => {
+                throw(error);
+            });
     };
 }

@@ -1,4 +1,4 @@
-# reactjs-starter-seed
+# ReactJs CRUD Starterkit
 
 * React crud boilerplate 
 * aka starter kit
@@ -19,8 +19,7 @@
 * Test Helper Library: JSDOM
 * Test Headless DOM: JSDOM
 * WhatWG Fetch
-* Mock API Data: JSON Schema Faker
-* Mock HTTP: JSON Server
+* Mock API Data: hand rolled
 * `webpack-hot-middleware` - hot module replacement when using `ExpressJs` as a server, rather than using `webpack-dev-server`.
 * `eslint-plugin-react`
 * JSDOM

@@ -1,22 +1,25 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-//import {getCoursesAction} from '../../action/CourseAction';
+import {getCoursesAction} from '../../action/CourseAction';
 import CourseList from './CourseList';
 
 class CourseListContainer extends React.Component {
-    // componentDidMount() {
-    //     this.props.getCoursesAction();
-    // }
+
+    componentDidMount() {
+        this.props.getCoursesAction();
+    }
+
 
     render() {
-        // const {courses} = this.props;
+        const {courses} = this.props;
 
-        // if (!courses) {
-        //     return(
-        //         <div></div>
-        //     );
-        // }
+        if (Object.getOwnPropertyNames(courses).length === 0) {
+            return(
+                <div>Loading...</div>
+            );
+        }
+
         return(
             <div>
                 <h1>Courses</h1>
@@ -36,16 +39,17 @@ function mapStateToProps(state) {
 
 
 
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators({getCoursesAction}, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({getCoursesAction}, dispatch);
+}
 
 
 
 CourseListContainer.propTypes = {
-    courses: PropTypes.array.isRequired
+    courses: PropTypes.array.isRequired,
+    getCoursesAction: PropTypes.func.isRequired
 };
 
 
 
-export default connect(mapStateToProps)(CourseListContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CourseListContainer);

@@ -8,10 +8,10 @@ import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 import './style/style.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import {getCoursesAction} from './action/CourseAction';
+//import {getCoursesAction} from './action/CourseAction';
 
 const store = configureStore();
-store.dispatch(getCoursesAction());
+//store.dispatch(getCoursesAction());
 
 render(
     <Provider store={store}>

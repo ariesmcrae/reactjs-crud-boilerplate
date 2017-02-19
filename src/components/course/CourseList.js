@@ -14,11 +14,9 @@ export default function CourseList({courses}) {
             </thead>
 
             <tbody>
-                {
-                    courses.map(course => {
-                        <CourseListRow key={course.id} course={course} />;
-                    })
-                }
+                {courses.map(course => 
+                    <CourseListRow key={course.id} course={course} />
+                )}
             </tbody>
         </table>
     );

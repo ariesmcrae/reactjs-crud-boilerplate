@@ -17,7 +17,6 @@ class CourseListContainer extends React.Component {
         //         <div></div>
         //     );
         // }
-
         return(
             <div>
                 <h1>Courses</h1>

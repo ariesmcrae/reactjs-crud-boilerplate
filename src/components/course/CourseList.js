@@ -9,7 +9,8 @@ export default function CourseList({courses}) {
                     <th>Title</th>
                     <th>Author</th>
                     <th>Category</th>
-                    <th>Length</th>                
+                    <th>Length</th>    
+                    <th>&nbsp;</th>            
                 </tr>
             </thead>
 

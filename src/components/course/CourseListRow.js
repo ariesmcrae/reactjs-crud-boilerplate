@@ -8,6 +8,7 @@ export default function CourseListRow({course}) {
             <td>{course.authorId}</td>
             <td>{course.category}</td>
             <td>{course.length}</td>
+            <td><Link to={`/course/course.id`}><span className="glyphicon glyphicon-pencil"/></Link></td>            
         </tr>
     );    
 }

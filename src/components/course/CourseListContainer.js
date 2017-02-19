@@ -14,11 +14,12 @@ class CourseListContainer extends React.Component {
     render() {
         const {courses} = this.props;
 
-        if (Object.getOwnPropertyNames(courses).length === 0) {
+        if (!courses) {
             return(
                 <div>Loading...</div>
             );
         }
+
 
         return(
             <div>
@@ -33,7 +34,7 @@ class CourseListContainer extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        courses: state.courseReducer
+        courses: state.courseReducer.courses
     };
 }
 

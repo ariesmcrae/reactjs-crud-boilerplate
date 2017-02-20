@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import Home from './components/Home';
 import CourseListContainer from './components/course/CourseListContainer';
-import ManageCourseContainer from './components/course/ManageCourseContainer';
+import AddOrEditCourseContainer from './components/course/AddOrEditCourseContainer';
 import About from './components/About';
 
 
@@ -13,7 +13,7 @@ export default (
         <IndexRoute component={Home} />
         <Route path="courses" component={CourseListContainer} />
         <Route path="course" component={ManageCourseContainer} />                
-        <Route path="course/:id" component={ManageCourseContainer} />        
+        <Route path="course/:id" component={AddOrEditCourseContainer} />        
         <Route path="about" component={About} />
     </Route>
 );

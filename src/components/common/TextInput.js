@@ -30,7 +30,7 @@ export default function TextInput({name, label, placeholder, value, onChange, er
 TextInput.propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    placeholder: PropTypes.string.isRequired,
+    placeholder: PropTypes.string,
     value: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     error: PropTypes.string

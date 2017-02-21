@@ -10,11 +10,43 @@ function getCoursesResponse(courses) {
 }
 
 
+
 export function getCoursesAction() {
     return(dispatch) => {
         return CourseApi.getAllCourses()
             .then(courses => {
                 dispatch(getCoursesResponse(courses));
+            }).catch(error => {
+                throw(error);
+            });
+    };
+}
+
+
+
+function updateCourseResponse(course) {
+    return {
+        type: ActionType.UPDATE_COURSE_RESPONSE,
+        course
+    };
+}
+
+
+
+function saveCourseResponse(course) {
+    return {
+        type: ActionType.SAVE_COURSE_RESPONSE,
+        course
+    };
+}
+
+
+
+export function saveCourseAction(course) {
+    return function(dispatch) {
+        return CourseApi.saveCourse(course)
+            .then(course => {
+                course.id ? dispatch(updateCourseResponse(course)) : dispatch(saveCourseResponse(course));
             }).catch(error => {
                 throw(error);
             });

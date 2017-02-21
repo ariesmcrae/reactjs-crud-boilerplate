@@ -24,7 +24,7 @@ class CourseListContainer extends React.Component {
         return(
             <div>
                 <h1>Courses</h1>
-                <CourseList courses={this.props.courses} />
+                <CourseList courses={courses} />
             </div>            
         );
     }

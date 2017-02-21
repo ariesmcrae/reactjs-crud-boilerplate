@@ -33,21 +33,10 @@ function updateCourseResponse(course) {
 
 
 
-function saveCourseResponse(course) {
-    return {
-        type: ActionType.SAVE_COURSE_RESPONSE,
-        course
-    };
-}
-
-
-
 export function saveCourseAction(course) {
     return function(dispatch) {
         return CourseApi.saveCourse(course)
-            .then(course => {
-                course.id ? dispatch(updateCourseResponse(course)) : dispatch(saveCourseResponse(course));
-            }).catch(error => {
+            .catch(error => {
                 throw(error);
             });
     };

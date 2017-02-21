@@ -18,11 +18,11 @@ export default function CourseForm({onChange, onSave}) {
                 onClick={onSave} 
             />
             
-            <input 
+            <button 
                 type="button" 
-                className="btn btn-default btn-space" 
-                value="Cancel"
-            />
+                className="btn btn-default btn-space">
+                Cancel
+            </button>
         </form>        
     );
 }

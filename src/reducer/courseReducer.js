@@ -13,10 +13,6 @@ export default function courseReducer(state = initialState.courses, action) {
         case ActionType.UPDATE_COURSE_RESPONSE:
             console.log('todo'); //TODO
             break;
-        
-        case ActionType.SAVE_COURSE_RESPONSE:
-            console.log('TODO'); //TODO
-            break;
 
         default: return state;
     }

@@ -24,15 +24,6 @@ export function getCoursesAction() {
 
 
 
-function updateCourseResponse(course) {
-    return {
-        type: ActionType.UPDATE_COURSE_RESPONSE,
-        course
-    };
-}
-
-
-
 export function saveCourseAction(course) {
     return function(dispatch) {
         return CourseApi.saveCourse(course)

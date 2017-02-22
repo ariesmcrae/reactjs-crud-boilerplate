@@ -47,7 +47,8 @@ class CourseListContainer extends React.Component {
                 <button 
                     type="button" 
                     className="btn btn-primary"
-                    onClick={this.goToAddOrEditCourse}>Add
+                    onClick={this.goToAddOrEditCourse}>
+                    Add
                 </button>
                 
                 <br/><br/><br/>

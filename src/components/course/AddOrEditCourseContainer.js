@@ -11,7 +11,8 @@ class AddOrEditCourseContainer extends React.Component {
         super(props);
 
         this.state = {
-            course: Object.assign({}, props.course)
+            course: Object.assign({}, props.course),
+            errors: {}
         };
 
         this.updateCourseState = this.updateCourseState.bind(this);
@@ -23,6 +24,7 @@ class AddOrEditCourseContainer extends React.Component {
     //Updates the this.state.course in memory
     updateCourseState(event) {
         const fieldBeingUpdate = event.target.name;
+        console.log('xxxxxfieldBeingUpdate=');
         let {course} = this.props;
         course[fieldBeingUpdate] = event.target.value;
         return this.setState({course: course});
@@ -46,18 +48,18 @@ class AddOrEditCourseContainer extends React.Component {
     
 
     isCourseFormValid() {
-        let formIsValid = false;
+        let formIsValid = true;
+
         let errors = {};
 
         if (this.state.course.title < 5) {
             errors.title = 'Title must be at least 5 characters';
+            formIsValid = false;
         }
 
-        if (errors) {
+        if (!formIsValid) {
             this.setState({errors: errors});
-        } else {
-            formIsValid = true;
-        }
+        } 
 
         return formIsValid;
     }
@@ -71,12 +73,16 @@ class AddOrEditCourseContainer extends React.Component {
 
 
     render() {
+        const heading = this.props.course.id ? 'Edit' : 'Add';
+
         return(
             <div>
-                <h1>Add Course</h1>
                 <CourseForm 
+                    heading={heading}
+                    course={this.state.course}
                     onChange={this.updateCourseState}
                     onSave={this.saveCourse}
+                    errors={this.state.errors}
                 />
             </div>                
         );
@@ -99,7 +105,7 @@ AddOrEditCourseContainer.contextTypes = {
 function mapStateToProps(state) {
     const course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
 
-    return { course: course};
+    return {course: course};
 }
 
 

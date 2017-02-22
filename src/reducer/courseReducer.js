@@ -10,10 +10,6 @@ export default function courseReducer(state = initialState.courses, action) {
             // The return object is a copy of state and overwrites the state.courses with a fresh clone of action.courses
             return {...state, courses: Object.assign([], action.courses)};
 
-        case ActionType.UPDATE_COURSE_RESPONSE:
-            console.log('todo'); //TODO
-            break;
-
         default: return state;
     }
 }

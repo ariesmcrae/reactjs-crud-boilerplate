@@ -12,7 +12,7 @@ import {saveCourseAction} from '../../action/CourseAction';
 class AddOrEditCourseContainer extends React.Component {
     constructor(props) {
         super(props);
-        console.log('xxxxxxxxxconstructor');
+
         this.state = {
             course: Object.assign({}, props.course),
             errors: {}
@@ -25,7 +25,6 @@ class AddOrEditCourseContainer extends React.Component {
 
 
     componentWillReceiveProps(nextProps) {
-        console.log('xxxxxxxxxcomponentWillReceiveProps nextProps.course.id=' + nextProps.course.id);
         if (this.props.course.id != nextProps.course.id) {
             this.setState({course: Object.assign({}, nextProps.course)});
         }
@@ -36,7 +35,6 @@ class AddOrEditCourseContainer extends React.Component {
     //Updates the this.state.course in memory
     updateCourseState(event) {
         const fieldBeingUpdate = event.target.name;
-        console.log('xxxxxfieldBeingUpdate=');
         let {course} = this.props;
         course[fieldBeingUpdate] = event.target.value;
         return this.setState({course: course});
@@ -46,7 +44,9 @@ class AddOrEditCourseContainer extends React.Component {
     saveCourse(event) {
         event.preventDefault();
 
-        if (!this.isCourseFormValid) {
+        const isCourseFormValid = this.isCourseFormValid();
+
+        if (!isCourseFormValid) {
             return;
         }
 
@@ -60,18 +60,20 @@ class AddOrEditCourseContainer extends React.Component {
     
 
     isCourseFormValid() {
-        let formIsValid = true;
+        let formIsValid = false;
 
         let errors = {};
 
-        if (this.state.course.title < 5) {
+        if (this.state.course.title.length < 5) {
             errors.title = 'Title must be at least 5 characters';
-            formIsValid = false;
         }
 
-        if (!formIsValid) {
-            this.setState({errors: errors});
-        } 
+        if (Object.keys(errors).length === 0 && errors.constructor === Object) {
+            //error is empty, therefore form is valid.
+            formIsValid = true;
+        } else {
+            this.setState({errors: errors});            
+        }
 
         return formIsValid;
     }
@@ -118,12 +120,11 @@ AddOrEditCourseContainer.contextTypes = {
 
 function mapStateToProps(state, ownProps) {
     const courseId = ownProps.params.id; //from the path '/course/:id'
-    console.log('xxxxxxxxxxxxxxmapStateToProps courseId = ' + courseId);
+
     let course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
 
     if (courseId && state.courseReducer.courses.length > 0) {
         course = getCourseById(state.courseReducer.courses, courseId);
-        console.log('xxxxxexisting course found. course = ' + course);
     }
 
     return {course: course};
@@ -144,7 +145,6 @@ function getCourseById(courses, courseId) {
 
 
 function mapDispatchToProps(dispatch) {
-    console.log('xxxxxxxxxxxxxxxxxxmapDispatchToProps');
     return bindActionCreators({saveCourseAction}, dispatch);
 }
 

@@ -10,12 +10,24 @@ function getCoursesResponse(courses) {
 }
 
 
+
 export function getCoursesAction() {
     return(dispatch) => {
         return CourseApi.getAllCourses()
             .then(courses => {
                 dispatch(getCoursesResponse(courses));
             }).catch(error => {
+                throw(error);
+            });
+    };
+}
+
+
+
+export function saveCourseAction(course) {
+    return function(dispatch) {
+        return CourseApi.saveCourse(course)
+            .catch(error => {
                 throw(error);
             });
     };

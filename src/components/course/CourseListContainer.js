@@ -3,12 +3,29 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getCoursesAction} from '../../action/CourseAction';
 import CourseList from './CourseList';
+import {browserHistory} from 'react-router';
+
+
 
 class CourseListContainer extends React.Component {
+
+    constructor() {
+        super();
+        this.goToAddOrEditCourse = this.goToAddOrEditCourse.bind(this);
+    }
+
+
 
     componentDidMount() {
         this.props.getCoursesAction();
     }
+
+
+
+    goToAddOrEditCourse() {
+        browserHistory.push('course');
+    }
+
 
 
     render() {
@@ -24,7 +41,19 @@ class CourseListContainer extends React.Component {
         return(
             <div>
                 <h1>Courses</h1>
-                <CourseList courses={this.props.courses} />
+                
+                <br/><br/>
+
+                <button 
+                    type="button" 
+                    className="btn btn-primary"
+                    onClick={this.goToAddOrEditCourse}>
+                    Add
+                </button>
+                
+                <br/><br/><br/>
+                
+                <CourseList courses={courses} />
             </div>            
         );
     }

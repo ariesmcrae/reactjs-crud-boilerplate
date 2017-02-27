@@ -23,7 +23,7 @@ class CourseListContainer extends React.Component {
 
 
     goToAddOrEditCourse() {
-        browserHistory.push('course');
+        browserHistory.push('/course');
     }
 
 

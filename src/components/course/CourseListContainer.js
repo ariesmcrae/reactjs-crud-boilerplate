@@ -1,9 +1,10 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {browserHistory} from 'react-router';
 import {getCoursesAction} from '../../action/CourseAction';
 import CourseList from './CourseList';
-import {browserHistory} from 'react-router';
+
 
 
 

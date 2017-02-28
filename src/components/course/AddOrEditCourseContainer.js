@@ -1,9 +1,12 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import _ from 'lodash';
 import CourseForm from './CourseForm';
 import {saveCourseAction} from '../../action/CourseAction';
-import _ from 'lodash';
+import {getAuthorsAction} from '../../action/AuthorAction';
+import {authorsFormattedForDropdown} from '../../selectors/selectors';
+
 
 // lifecycle:
 //      1. mapStateToProps
@@ -27,6 +30,12 @@ class AddOrEditCourseContainer extends React.Component {
 
 
 
+    componentDidMount() {
+        this.props.getAuthorsAction();
+    }
+
+
+
     componentWillReceiveProps(nextProps) {
         if (this.props.course.id != nextProps.course.id) {
             this.setState({course: Object.assign({}, nextProps.course)});
@@ -37,6 +46,7 @@ class AddOrEditCourseContainer extends React.Component {
 
     //Updates the this.state.course in memory
     updateCourseState(event) {
+        debugger;
         const fieldBeingUpdate = event.target.name;
         let {course} = this.props;
         course[fieldBeingUpdate] = event.target.value;
@@ -95,6 +105,12 @@ class AddOrEditCourseContainer extends React.Component {
 
 
     render() {
+        if (!this.props.authors) {
+            return (
+                <div>Loading...</div>
+            );
+        }
+
         const heading = this.props.course.id ? 'Edit' : 'Add';
 
         return(
@@ -102,9 +118,10 @@ class AddOrEditCourseContainer extends React.Component {
                 <CourseForm 
                     heading={heading}
                     course={this.state.course}
+                    authors={this.props.authors}
+                    errors={this.state.errors}                    
                     onChange={this.updateCourseState}
                     onSave={this.saveCourse}
-                    errors={this.state.errors}
                     onCancel={this.handleCancel}
                 />
             </div>                
@@ -116,7 +133,9 @@ class AddOrEditCourseContainer extends React.Component {
 
 AddOrEditCourseContainer.propTypes = {
     course: PropTypes.object.isRequired,
-    saveCourseAction: PropTypes.func.isRequired
+    authors: PropTypes.array,
+    saveCourseAction: PropTypes.func.isRequired,
+    getAuthorsAction: PropTypes.func.isRequired
 };
 
 
@@ -140,7 +159,10 @@ function mapStateToProps(state, ownProps) {
         course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};        
     }
 
-    return {course: course};
+    return {
+        course: course,
+        authors: authorsFormattedForDropdown(state.authorReducer.authors)
+    };
 }
 
 
@@ -158,7 +180,7 @@ function getCourseById(courses, courseId) {
 
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({saveCourseAction}, dispatch);
+    return bindActionCreators({saveCourseAction, getAuthorsAction}, dispatch);
 }
 
 

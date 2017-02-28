@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 export default function SelectInput({name, label, value, onChange, defaultOption, error, options}) {
     return(
         <div className="form-group">
-            <div htmlForm={name}>{label}</div>
+            <div htmlFor={name}>{label}</div>
             <div className="field">
                 <select
                     name={name}

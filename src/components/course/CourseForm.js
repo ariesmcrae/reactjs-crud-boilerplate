@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import TextInput from '../common/TextInput';
 
 
-export default function CourseForm({heading, course, onChange, onSave, errors}) {
+export default function CourseForm({heading, course, onChange, onSave, errors, onCancel}) {
     return(
          <form>
             <h1>{heading}</h1>
@@ -40,7 +40,8 @@ export default function CourseForm({heading, course, onChange, onSave, errors}) 
             
             <button 
                 type="button" 
-                className="btn btn-default btn-space">
+                className="btn btn-default btn-space"
+                onClick={onCancel}>
                 Cancel
             </button>
         </form>        
@@ -54,5 +55,6 @@ CourseForm.propTypes = {
     course: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
     onSave: PropTypes.func.isRequired,
-    errors: PropTypes.object
+    errors: PropTypes.object,
+    onCancel: PropTypes.func.isRequired
 };

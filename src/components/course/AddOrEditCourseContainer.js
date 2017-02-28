@@ -13,6 +13,7 @@ class AddOrEditCourseContainer extends React.Component {
     constructor(props) {
         super(props);
 
+        //get props.course that was set by mapStateToProps
         this.state = {
             course: Object.assign({}, props.course),
             errors: {}
@@ -20,6 +21,7 @@ class AddOrEditCourseContainer extends React.Component {
 
         this.updateCourseState = this.updateCourseState.bind(this);
         this.saveCourse = this.saveCourse.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
 
@@ -55,6 +57,11 @@ class AddOrEditCourseContainer extends React.Component {
             .catch(error => {
                 throw(error);
             });
+    }
+
+
+    handleCancel() {
+        this.redirect();
     }
 
     
@@ -97,6 +104,7 @@ class AddOrEditCourseContainer extends React.Component {
                     onChange={this.updateCourseState}
                     onSave={this.saveCourse}
                     errors={this.state.errors}
+                    onCancel={this.handleCancel}
                 />
             </div>                
         );
@@ -121,10 +129,14 @@ AddOrEditCourseContainer.contextTypes = {
 function mapStateToProps(state, ownProps) {
     const courseId = ownProps.params.id; //from the path '/course/:id'
 
-    let course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
+    let course = null;
 
     if (courseId && state.courseReducer.courses.length > 0) {
+        //for 'edit'.
         course = getCourseById(state.courseReducer.courses, courseId);
+    } else {
+        //essential during 'add'.
+        course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};        
     }
 
     return {course: course};

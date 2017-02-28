@@ -46,7 +46,6 @@ class AddOrEditCourseContainer extends React.Component {
 
     //Updates the this.state.course in memory
     updateCourseState(event) {
-        debugger;
         const fieldBeingUpdate = event.target.name;
         let {course} = this.props;
         course[fieldBeingUpdate] = event.target.value;

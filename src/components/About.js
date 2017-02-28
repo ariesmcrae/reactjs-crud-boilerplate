@@ -4,8 +4,8 @@ export default class About extends React.Component {
   render() {
     return (
       <div>
-        <h1>About Header</h1>
-        <p>About About About About About</p>
+        <h1>About</h1>
+        <p>Est et amet perfecto sententiae, nec error essent eripuit ei. Velit sanctus ut has, partem dolorem atomorum est ad, sumo fabellas electram ex vim.</p>
       </div>
     );
   }

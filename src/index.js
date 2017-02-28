@@ -11,7 +11,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //import {getCoursesAction} from './action/CourseAction';
 
 const store = configureStore();
-//store.dispatch(getCoursesAction());
 
 render(
     <Provider store={store}>

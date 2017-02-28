@@ -1,11 +1,12 @@
 import React, {PropTypes} from 'react';
 import Header from './common/Header';
+import {connect} from 'react-redux';
 
-export default class App extends React.Component {
+class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <Header/>
+                <Header apiCallsInProgress={this.props.apiCallsInProgress}/>
                 {this.props.children}
             </div>
         );
@@ -14,5 +15,14 @@ export default class App extends React.Component {
 
 App.propTypes = {
   children: PropTypes.object.isRequired,
+  apiCallsInProgress: PropTypes.bool.isRequired
 };
 
+
+function mapStateToProps(state) {
+    return {
+        apiCallsInProgress: state.apiReducer > 0
+    };
+}
+
+export default connect(mapStateToProps)(App);

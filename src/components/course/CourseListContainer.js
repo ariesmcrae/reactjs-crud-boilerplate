@@ -76,7 +76,7 @@ function mapDispatchToProps(dispatch) {
 
 
 CourseListContainer.propTypes = {
-    courses: PropTypes.array.isRequired,
+    courses: PropTypes.array,
     getCoursesAction: PropTypes.func.isRequired
 };
 

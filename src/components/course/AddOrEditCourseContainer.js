@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import CourseForm from './CourseForm';
 import {saveCourseAction} from '../../action/CourseAction';
+import _ from 'lodash';
 
 // lifecycle:
 //      1. mapStateToProps
@@ -75,7 +76,7 @@ class AddOrEditCourseContainer extends React.Component {
             errors.title = 'Title must be at least 5 characters';
         }
 
-        if (Object.keys(errors).length === 0 && errors.constructor === Object) {
+        if (_.isEmpty(errors)) {
             //error is empty, therefore form is valid.
             formIsValid = true;
         } else {

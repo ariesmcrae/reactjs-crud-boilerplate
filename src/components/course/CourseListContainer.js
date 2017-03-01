@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
+import toastr from 'toastr';
 import {getCoursesAction} from '../../action/CourseAction';
 import CourseList from './CourseList';
 
@@ -18,7 +19,10 @@ class CourseListContainer extends React.Component {
 
 
     componentDidMount() {
-        this.props.getCoursesAction();
+        this.props.getCoursesAction()
+            .catch(error => {
+                toastr.error(error);
+            });
     }
 
 

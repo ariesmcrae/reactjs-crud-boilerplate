@@ -17,4 +17,4 @@ import thunk from 'redux-thunk';
 
 import _ from 'lodash';
 
-
+import toastr from 'toastr';

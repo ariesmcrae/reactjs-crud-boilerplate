@@ -24,6 +24,8 @@
 * `eslint-plugin-react`
 * JSDOM
 * react-router 3.x
+* toastr (unfortunately, I had to install jquery with it, as it wouldn't work without it)
+* lodash
 
 ### Webpack plugins
 * Dynamic HTML generation: html-webpack-plugin

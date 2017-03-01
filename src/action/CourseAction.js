@@ -1,6 +1,6 @@
 import * as ActionType from './ActionType';
 import CourseApi from '../api/CourseApi';
-import {beginApiCallAction} from './ApiAction';
+import {ApiCallBeginAction, ApiCallErrorAction} from './ApiAction';
 
 function getCoursesResponse(courses) {
     return {
@@ -14,7 +14,7 @@ function getCoursesResponse(courses) {
 export function getCoursesAction() {
     return(dispatch) => {
         
-        dispatch(beginApiCallAction());
+        dispatch(ApiCallBeginAction());
 
         return CourseApi.getAllCourses()
             .then(courses => {
@@ -37,12 +37,13 @@ function saveCourseResponse() {
 export function saveCourseAction(course) {
     return function(dispatch) {
 
-        dispatch(beginApiCallAction());
+        dispatch(ApiCallBeginAction());
 
         return CourseApi.saveCourse(course)
             .then(course => {
                 dispatch(saveCourseResponse());
             }).catch(error => {
+                dispatch(ApiCallErrorAction());
                 throw(error);
             });
     };

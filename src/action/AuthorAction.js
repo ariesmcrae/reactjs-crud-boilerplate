@@ -1,6 +1,6 @@
 import * as ActionType from './ActionType';
 import AuthorApi from '../api/AuthorApi';
-import {beginApiCallAction} from './ApiAction';
+import {ApiCallBeginAction} from './ApiAction';
 
 
 function getAuthorsResponse(authors) {
@@ -15,7 +15,7 @@ function getAuthorsResponse(authors) {
 export function getAuthorsAction() {
     return dispatch => {
 
-        dispatch(beginApiCallAction());
+        dispatch(ApiCallBeginAction());
 
         return AuthorApi.getAllAuthors()
             .then(authors => {

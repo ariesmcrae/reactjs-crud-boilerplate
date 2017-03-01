@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import _ from 'lodash';
+import toastr from 'toastr';
 import CourseForm from './CourseForm';
 import {saveCourseAction} from '../../action/CourseAction';
 import {getAuthorsAction} from '../../action/AuthorAction';
@@ -32,7 +33,10 @@ class AddOrEditCourseContainer extends React.Component {
 
 
     componentDidMount() {
-        this.props.getAuthorsAction();
+        this.props.getAuthorsAction()
+            .catch(error => {
+                toastr.error(error);
+            });
     }
 
 
@@ -63,14 +67,16 @@ class AddOrEditCourseContainer extends React.Component {
             return;
         }
 
-        this.setState({isSaving: true});        
+        this.setState({isSaving: true});                
 
         this.props.saveCourseAction(this.state.course)
             .then(() => {
-                this.setState({isSaving: false});
+                this.setState({isSaving: false});                                
+                toastr.success('Course saved');
                 this.redirect();
             }).catch(error => {
-                throw(error);
+                this.setState({isSaving: false});                
+                toastr.error(error);
             });
     }
 

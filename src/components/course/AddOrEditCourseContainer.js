@@ -20,7 +20,8 @@ class AddOrEditCourseContainer extends React.Component {
         //get props.course that was set by mapStateToProps
         this.state = {
             course: Object.assign({}, props.course),
-            errors: {}
+            errors: {},
+            isSaving: false
         };
 
         this.updateCourseState = this.updateCourseState.bind(this);
@@ -62,9 +63,13 @@ class AddOrEditCourseContainer extends React.Component {
             return;
         }
 
+        this.setState({isSaving: true});        
+
         this.props.saveCourseAction(this.state.course)
-            .then(() => this.redirect())
-            .catch(error => {
+            .then(() => {
+                this.setState({isSaving: false});
+                this.redirect();
+            }).catch(error => {
                 throw(error);
             });
     }
@@ -122,6 +127,7 @@ class AddOrEditCourseContainer extends React.Component {
                     onChange={this.updateCourseState}
                     onSave={this.saveCourse}
                     onCancel={this.handleCancel}
+                    isSaving={this.state.isSaving}
                 />
             </div>                
         );

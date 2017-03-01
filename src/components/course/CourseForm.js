@@ -3,7 +3,7 @@ import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
 
 
-export default function CourseForm({heading, course, authors, errors, onChange, onSave, onCancel}) {
+export default function CourseForm({heading, course, authors, errors, onChange, onSave, onCancel, isSaving}) {
     return(
          <form>
             <h1>{heading}</h1>
@@ -44,12 +44,13 @@ export default function CourseForm({heading, course, authors, errors, onChange, 
                 error={errors.length}
             />
 
-            <button 
+            <input 
                 type="submit" 
                 className="btn btn-primary" 
-                onClick={onSave}>
-                Save
-            </button>
+                onClick={onSave}
+                value={isSaving ? 'Saving...' : 'Save'}
+                disabled={isSaving}
+            />
             
             <button 
                 type="button" 
@@ -70,5 +71,6 @@ CourseForm.propTypes = {
     errors:     PropTypes.object,
     onChange:   PropTypes.func.isRequired,
     onSave:     PropTypes.func.isRequired,
-    onCancel:   PropTypes.func.isRequired
+    onCancel:   PropTypes.func.isRequired,
+    isSaving:   PropTypes.bool.isRequired
 };

@@ -16,8 +16,9 @@
 * ESLint, eslint-watch
 * Test Framework: Mocha
 * Test Assertion: Chai
-* Test Helper Library: JSDOM
-* Test Headless DOM: JSDOM
+* Test Helper Library: Enzyme, JSDOM
+* Test Headless DOM: JSDOM - in memory DOM where tests are executed.
+* react-addons-test-utils: needed by Enzyme
 * WhatWG Fetch
 * Mock API Data: hand rolled
 * `webpack-hot-middleware` - hot module replacement when using `ExpressJs` as a server, rather than using `webpack-dev-server`.

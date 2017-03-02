@@ -4,12 +4,17 @@ import initialState from './initialState';
 
 
 
-export default function apiReducer(state = initialState.apiReducer.apiCallsInProgress, action) {
+export default function apiReducer(state = initialState.apiReducer, action) {
     if (action.type == ActionType.API_CALL_BEGIN) {
-        return state + 1;
+        return {
+            ...state, apiCallsInProgress: state.apiCallsInProgress + 1
+        };
+
 
     } else if (isApiCallFinished(action.type) || action.type == ActionType.API_CALL_ERROR) {
-        return state - 1;
+        return {
+            ...state, apiCallsInProgress: state.apiCallsInProgress -1
+        };
     }
 
     return state;

@@ -21,7 +21,7 @@ App.propTypes = {
 
 function mapStateToProps(state) {
     return {
-        apiCallsInProgress: state.apiReducer > 0
+        apiCallsInProgress: state.apiReducer.apiCallsInProgress > 0
     };
 }
 

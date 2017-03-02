@@ -4,8 +4,8 @@ import {bindActionCreators} from 'redux';
 import _ from 'lodash';
 import toastr from 'toastr';
 import CourseForm from './CourseForm';
-import {saveCourseAction} from '../../action/CourseAction';
-import {getAuthorsAction} from '../../action/AuthorAction';
+import * as courseAction from '../../action/CourseAction';
+import * as authorAction from '../../action/AuthorAction';
 import {authorsFormattedForDropdown} from '../../selectors/selectors';
 
 
@@ -14,7 +14,7 @@ import {authorsFormattedForDropdown} from '../../selectors/selectors';
 //      2. mapDispatchToProps
 //      3. constructor
 
-class AddOrEditCourseContainer extends React.Component {
+export class AddOrEditCourseContainer extends React.Component {
     constructor(props) {
         super(props);
 
@@ -33,7 +33,7 @@ class AddOrEditCourseContainer extends React.Component {
 
 
     componentDidMount() {
-        this.props.getAuthorsAction()
+        this.props.action.getAuthorsAction()
             .catch(error => {
                 toastr.error(error);
             });
@@ -69,7 +69,7 @@ class AddOrEditCourseContainer extends React.Component {
 
         this.setState({isSaving: true});                
 
-        this.props.saveCourseAction(this.state.course)
+        this.props.action.saveCourseAction(this.state.course)
             .then(() => {
                 this.setState({isSaving: false});                                
                 toastr.success('Course saved');
@@ -93,7 +93,7 @@ class AddOrEditCourseContainer extends React.Component {
         let errors = {};
 
         if (this.state.course.title.length < 5) {
-            errors.title = 'Title must be at least 5 characters';
+            errors.title = 'Title must be at least 5 characters.';
         }
 
         if (_.isEmpty(errors)) {
@@ -145,8 +145,7 @@ class AddOrEditCourseContainer extends React.Component {
 AddOrEditCourseContainer.propTypes = {
     course: PropTypes.object.isRequired,
     authors: PropTypes.array,
-    saveCourseAction: PropTypes.func.isRequired,
-    getAuthorsAction: PropTypes.func.isRequired
+    action: PropTypes.object.isRequired
 };
 
 
@@ -191,8 +190,13 @@ function getCourseById(courses, courseId) {
 
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({saveCourseAction, getAuthorsAction}, dispatch);
+    return {
+        action: bindActionCreators({...authorAction, ...courseAction}, dispatch)
+    };
 }
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddOrEditCourseContainer);
+
+
+

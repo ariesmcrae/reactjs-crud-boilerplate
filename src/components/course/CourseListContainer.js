@@ -3,13 +3,12 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 import toastr from 'toastr';
-import {getCoursesAction} from '../../action/CourseAction';
+import * as courseAction from '../../action/CourseAction';
 import CourseList from './CourseList';
 
 
 
-
-class CourseListContainer extends React.Component {
+export class CourseListContainer extends React.Component {
 
     constructor() {
         super();
@@ -19,7 +18,7 @@ class CourseListContainer extends React.Component {
 
 
     componentDidMount() {
-        this.props.getCoursesAction()
+        this.props.action.getCoursesAction()
             .catch(error => {
                 toastr.error(error);
             });
@@ -75,14 +74,16 @@ function mapStateToProps(state) {
 
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({getCoursesAction}, dispatch);
+    return {
+        action: bindActionCreators(courseAction, dispatch)
+    };
 }
 
 
 
 CourseListContainer.propTypes = {
     courses: PropTypes.array,
-    getCoursesAction: PropTypes.func.isRequired
+    action: PropTypes.object.isRequired
 };
 
 

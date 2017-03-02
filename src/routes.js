@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import Home from './components/Home';
-import CourseListContainer from './components/course/CourseListContainer';
-import AddOrEditCourseContainer from './components/course/AddOrEditCourseContainer';
+import CourseListContainer from './components/course/CourseListContainer'; // eslint-disable-line import/no-named-as-default
+import AddOrEditCourseContainer from './components/course/AddOrEditCourseContainer'; // eslint-disable-line import/no-named-as-default
 import About from './components/About';
 
 

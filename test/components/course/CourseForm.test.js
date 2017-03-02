@@ -21,7 +21,8 @@ function setup(heading, isSaving) {
 }
 
 
-describe('CourseForm test', () => {
+describe('CourseForm.test.js', () => {
+
     it('renders form and display "Add" in h1', () => {
         const wrapper = setup('Add', false);
         expect(wrapper.find('form').length).to.equal(1);
@@ -46,5 +47,6 @@ describe('CourseForm test', () => {
         const wrapper = setup('Add', true);
         expect(wrapper.find('input').props().value).to.equal('Saving...');
     });
+    
 });
 

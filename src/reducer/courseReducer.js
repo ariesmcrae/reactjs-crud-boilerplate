@@ -2,7 +2,8 @@ import * as ActionType from '../action/ActionType';
 import initialState from './initialState';
 
 
-export default function courseReducer(state = initialState.courses, action) {
+
+export default function courseReducer(state = initialState.courseReducer, action) {
     switch(action.type) {
         case ActionType.GET_COURSES_RESPONSE:
             // '...' spread operator clones the state

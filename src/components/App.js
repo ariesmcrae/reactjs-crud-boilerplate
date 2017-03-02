@@ -4,12 +4,6 @@ import {connect} from 'react-redux';
 
 class App extends React.Component {
     render() {
-        // if (!this.props.apiCallsInProgress) {
-        //     return (
-        //         <div>Loading...</div>
-        //     );
-        // }
-
         return (
             <div className="container">
                 <Header apiCallsInProgress={this.props.apiCallsInProgress}/>
@@ -26,7 +20,6 @@ App.propTypes = {
 
 
 function mapStateToProps(state) {
-    //debugger;
     return {
         apiCallsInProgress: state.apiReducer > 0
     };

@@ -1,7 +1,7 @@
 import React from 'react';
 import {expect} from 'chai';
-import {mount, shallow} from 'enzyme';
-import CourseForm from './CourseForm';
+import {shallow} from 'enzyme';
+import CourseForm from '../../../src/components/course/CourseForm';
 
 
 

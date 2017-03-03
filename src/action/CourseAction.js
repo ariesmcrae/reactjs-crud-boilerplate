@@ -27,21 +27,35 @@ export function getCoursesAction() {
 
 
 
-function saveCourseResponse() {
+function addNewCourseResponse(course) {
     return {
-        type: ActionType.SAVE_COURSE_RESPONSE
+        type: ActionType.ADD_NEW_COURSE_RESPONSE,
+        course
     };
 }
 
 
-export function saveCourseAction(course) {
+function updateExistingCourseResponse(course) {
+    return {
+        type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE,
+        course
+    };
+}
+
+
+export function saveCourseAction(courseBeingAddedOrEdited) {
     return function(dispatch) {
 
         dispatch(ApiCallBeginAction());
 
-        return CourseApi.saveCourse(course)
-            .then(course => {
-                dispatch(saveCourseResponse());
+        //if authorId exists, it means that the course is being edited, therefore update it.
+        //if authorId doesn't exist, it must therefore be new course that is being added, therefore add it
+        return CourseApi.saveCourse(courseBeingAddedOrEdited)
+            .then(savedCourse => {
+                debugger;
+                courseBeingAddedOrEdited.id ? 
+                    dispatch(updateExistingCourseResponse(savedCourse))
+                    : dispatch(addNewCourseResponse(savedCourse));
             }).catch(error => {
                 dispatch(ApiCallErrorAction());
                 throw(error);

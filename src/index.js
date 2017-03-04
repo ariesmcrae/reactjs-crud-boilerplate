@@ -9,8 +9,7 @@ import routes from './routes';
 import './style/style.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
-
-
+import 'font-awesome/css/font-awesome.css';
 
 const store = configureStore();
 

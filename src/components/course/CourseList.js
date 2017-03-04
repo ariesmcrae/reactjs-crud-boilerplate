@@ -3,7 +3,7 @@ import CourseListRow from './CourseListRow';
 
 export default function CourseList({courses}) {
     return(
-        <table className="table">
+        <table className="table table-striped table-responsive">
             <thead>
                 <tr>
                     <th>Title</th>

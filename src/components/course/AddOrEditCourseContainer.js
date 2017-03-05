@@ -73,7 +73,7 @@ export class AddOrEditCourseContainer extends React.Component {
             .then(() => {
                 this.setState({isSaving: false});                                
                 toastr.success('Course saved');
-                this.redirect();
+                this.props.history.push('/courses');
             }).catch(error => {
                 this.setState({isSaving: false});                
                 toastr.error(error);
@@ -103,8 +103,8 @@ export class AddOrEditCourseContainer extends React.Component {
 
 
 
-    redirect() {
-        this.context.router.push('/courses');
+    handleCancel() {
+        this.props.history.replace('/courses');
     }
 
 
@@ -127,6 +127,7 @@ export class AddOrEditCourseContainer extends React.Component {
                     errors={this.state.errors}                    
                     onChange={this.updateCourseState}
                     onSave={this.saveCourse}
+                    onCancel={this.handleCancel}
                     isSaving={this.state.isSaving}
                 />
             </div>                
@@ -139,14 +140,15 @@ export class AddOrEditCourseContainer extends React.Component {
 AddOrEditCourseContainer.propTypes = {
     course: PropTypes.object.isRequired,
     authors: PropTypes.array,
-    action: PropTypes.object.isRequired
+    action: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
 };
 
 
-//Pull in the React Router context so router is available on this.context.router.
-AddOrEditCourseContainer.contextTypes = {
-    router: PropTypes.object
-};
+// //Pull in the React Router context so router is available on this.context.router.
+// AddOrEditCourseContainer.contextTypes = {
+//     router: PropTypes.object
+// };
 
 
 

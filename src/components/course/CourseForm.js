@@ -1,11 +1,11 @@
 import React, {PropTypes} from 'react';
 import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
-import Button from '../common/Button';
+//import Button from '../common/Button';
 
 
 
-export default function CourseForm({heading, course, authors, errors, onChange, onSave, isSaving}) {
+export default function CourseForm({heading, course, authors, errors, onChange, onSave, onCancel, isSaving}) {
     return(
          <form>
             <h1>{heading}</h1>
@@ -54,11 +54,13 @@ export default function CourseForm({heading, course, authors, errors, onChange, 
                 disabled={isSaving}
             />
             
-            <Button 
-                className={'btn btn-default btn-space'}
-                value={'Cancel'}
-                goToPath={'/courses'}
-            />
+            <button 
+                type="button"
+                className="btn btn-default btn-space"
+                onClick={onCancel}                
+            >
+                Cancel
+            </button>
         </form>        
     );
 }
@@ -72,5 +74,6 @@ CourseForm.propTypes = {
     errors:     PropTypes.object,
     onChange:   PropTypes.func.isRequired,
     onSave:     PropTypes.func.isRequired,
+    onCancel:   PropTypes.func.isRequired,
     isSaving:   PropTypes.bool.isRequired
 };

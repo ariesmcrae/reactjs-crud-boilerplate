@@ -1,15 +1,19 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Route} from 'react-router-dom';
 import toastr from 'toastr';
 import * as courseAction from '../../action/CourseAction';
 import CourseList from './CourseList';
-import Button from '../common/Button';
 
 
 
 export class CourseListContainer extends React.Component {
+
+    constructor() {
+        super();
+        this.handleAddCourse = this.handleAddCourse.bind(this);
+    }
+
 
     componentDidMount() {
         this.props.action.getCoursesAction()
@@ -19,6 +23,10 @@ export class CourseListContainer extends React.Component {
     }
 
     
+    handleAddCourse() {
+        this.props.history.push('/course');
+    }
+
 
     render() {
         const {courses} = this.props;
@@ -35,11 +43,12 @@ export class CourseListContainer extends React.Component {
                 
                 <br/><br/>
 
-                <Button
-                    className={'btn btn-primary'}
-                    value={'Add'}
-                    goToPath={'/course'}
-                />
+                <button 
+                    type="button" 
+                    className="btn btn-primary"
+                    onClick={this.handleAddCourse}>
+                    Add
+                </button>
                 
                 <br/><br/><br/>
                 
@@ -69,8 +78,9 @@ function mapDispatchToProps(dispatch) {
 
 
 CourseListContainer.propTypes = {
-    courses: PropTypes.array,
-    action: PropTypes.object.isRequired
+    courses:    PropTypes.array,
+    action:     PropTypes.object.isRequired,
+    history:    PropTypes.object.isRequired
 };
 
 

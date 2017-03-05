@@ -7,6 +7,11 @@ import Home from './Home';
 import CourseListContainer from './course/CourseListContainer'; // eslint-disable-line import/no-named-as-default
 import AddOrEditCourseContainer from './course/AddOrEditCourseContainer'; // eslint-disable-line import/no-named-as-default
 import About from './About';
+import createBrowserHistory from 'history/createBrowserHistory';
+
+
+
+const history = createBrowserHistory();
 
 
 
@@ -14,7 +19,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <Router>
+                <Router history={history}>
                     <div>
                         <Header apiCallsInProgress={this.props.apiCallsInProgress}/>
                         <Switch>

@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import { Link, IndexLink } from 'react-router';
+import {NavLink} from 'react-router-dom';
 import Spinner from './Spinner';
 
 
@@ -7,11 +7,11 @@ import Spinner from './Spinner';
 export default function Header({apiCallsInProgress}) {
     return (
         <nav>
-            <IndexLink to="/" activeClassName="active">Home</IndexLink>
+            <NavLink to="/" activeClassName="active">Home</NavLink>
             {" | "}
-            <Link to="/courses" activeClassName="active">Courses</Link>        
+            <NavLink to="/courses" activeClassName="active">Courses</NavLink>        
             {" | "}
-            <Link to="/about" activeClassName="active">About</Link>
+            <NavLink to="/about" activeClassName="active">About</NavLink>
             &nbsp; &nbsp; &nbsp; {apiCallsInProgress && <Spinner interval={100} dots={20}/>}
         </nav>
     );

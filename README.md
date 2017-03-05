@@ -24,9 +24,11 @@
 * `webpack-hot-middleware` - hot module replacement when using `ExpressJs` as a server, rather than using `webpack-dev-server`.
 * `eslint-plugin-react`
 * JSDOM
-* react-router 3.x
+* react-router 4
 * toastr (unfortunately, I had to install jquery with it, as it wouldn't work without it)
 * lodash
+* Bootstrap 4
+* Fontawesome: because Bootstrap 4 no longer suppies glyphicons
 
 ### Webpack plugins
 * Dynamic HTML generation: html-webpack-plugin

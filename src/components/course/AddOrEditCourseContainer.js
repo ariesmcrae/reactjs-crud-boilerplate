@@ -81,11 +81,6 @@ export class AddOrEditCourseContainer extends React.Component {
     }
 
 
-    handleCancel() {
-        this.redirect();
-    }
-
-    
 
     isCourseFormValid() {
         let formIsValid = false;
@@ -132,7 +127,6 @@ export class AddOrEditCourseContainer extends React.Component {
                     errors={this.state.errors}                    
                     onChange={this.updateCourseState}
                     onSave={this.saveCourse}
-                    onCancel={this.handleCancel}
                     isSaving={this.state.isSaving}
                 />
             </div>                
@@ -157,7 +151,7 @@ AddOrEditCourseContainer.contextTypes = {
 
 
 function mapStateToProps(state, ownProps) {
-    const courseId = ownProps.params.id; //from the path '/course/:id'
+    const courseId = ownProps.match.params.id; //from the path '/course/:id'
 
     let course = null;
 

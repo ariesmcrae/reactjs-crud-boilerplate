@@ -141,14 +141,9 @@ AddOrEditCourseContainer.propTypes = {
     course: PropTypes.object.isRequired,
     authors: PropTypes.array,
     action: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
+    history: PropTypes.object
 };
 
-
-// //Pull in the React Router context so router is available on this.context.router.
-// AddOrEditCourseContainer.contextTypes = {
-//     router: PropTypes.object
-// };
 
 
 

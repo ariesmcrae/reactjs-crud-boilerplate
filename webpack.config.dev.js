@@ -28,12 +28,12 @@ export default {
 
     module: {
         rules: [
-            { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
+            { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-            {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: 'file-loader'},
-            { test: /\.(woff|woff2)$/, use: 'url-loader?prefix=font/&limit=5000'},
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, use: 'url-loader?limit=10000&mimetype=application/octet-stream'},
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, use: 'url-loader?limit=10000&mimetype=image/svg+xml'}
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: 'file-loader' },
+            { test: /\.(woff|woff2)$/, use: 'url-loader?prefix=font/&limit=5000' },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, use: 'url-loader?limit=10000&mimetype=application/octet-stream' },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, use: 'url-loader?limit=10000&mimetype=image/svg+xml' }
         ]
     }
 };

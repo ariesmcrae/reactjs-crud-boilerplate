@@ -6,13 +6,22 @@ import Spinner from './Spinner';
 
 export default function Header({apiCallsInProgress}) {
     return (
-        <nav>
-            <NavLink to="/" activeClassName="active">Home</NavLink>
-            {" | "}
-            <NavLink to="/courses" activeClassName="active">Courses</NavLink>        
-            {" | "}
-            <NavLink to="/about" activeClassName="active">About</NavLink>
-            &nbsp; &nbsp; &nbsp; {apiCallsInProgress && <Spinner interval={100} dots={20}/>}
+        <nav className="navbar navbar-toggleable-sm bg-info navbar-inverse">
+            <div className="container">
+                <button className="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+                    <span className="navbar-toggler-icon"/>
+                </button>
+
+                <div className="collapse navbar-collapse" id="mainNav">
+                    <div className="navbar-nav">
+                        <NavLink className="nav-item nav-link active" to="/" activeClassName="active">Home</NavLink>
+                        <NavLink className="nav-item nav-link" to="/courses" activeClassName="active">Courses</NavLink>        
+                        <NavLink className="nav-item nav-link" to="/about" activeClassName="active">About</NavLink>
+
+                        &nbsp; &nbsp; &nbsp; {apiCallsInProgress && <Spinner className="nav-item nav-link" interval={100} dots={20}/>}
+                    </div>
+                </div>
+            </div>
         </nav>
     );
 }

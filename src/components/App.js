@@ -18,7 +18,7 @@ const history = createBrowserHistory();
 class App extends React.Component {
     render() {
         return (
-            <div className="container">
+            <div >
                 <Router history={history}>
                     <div>
                         <Header apiCallsInProgress={this.props.apiCallsInProgress}/>

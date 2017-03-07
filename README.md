@@ -1,6 +1,5 @@
-# ReactJs CRUD Starterkit
+# ReactJs CRUD Boilerplate
 
-* React crud boilerplate 
 * aka starter kit
 * aka Starter project
 * aka Seed

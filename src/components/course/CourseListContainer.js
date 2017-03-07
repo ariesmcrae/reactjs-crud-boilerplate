@@ -38,7 +38,7 @@ export class CourseListContainer extends React.Component {
         }
 
         return (
-            <div>
+            <div className="container">
                 <h1>Courses</h1>
                 
                 <br/><br/>

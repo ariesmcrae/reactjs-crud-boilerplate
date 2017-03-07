@@ -21,6 +21,11 @@ export default {
             template: 'src/index.html',
             inject: true
         }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            Tether: "tether"            
+        }),
         new webpack.LoaderOptionsPlugin({ debug: true }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()

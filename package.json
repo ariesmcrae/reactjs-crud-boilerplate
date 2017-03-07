@@ -1,20 +1,17 @@
 {
   "name": "reactjs-crud-starterkit",
-
   "description": "ReactJS CRUD Starter Kit",
-
   "version": "0.0.2",
-
   "main": "index.js",
-
   "repository": "https://github.com/ariesmcrae/reactjs-crud-starter-kit.git",
-
   "author": "Aries McRae <github@ariesmcrae.com>",
-
-  "license": "MIT",  
-
-  "keywords": ["Boilerplate", "Starter Kit", "Starter Project", "Seed"],
-
+  "license": "MIT",
+  "keywords": [
+    "Boilerplate",
+    "Starter Kit",
+    "Starter Project",
+    "Seed"
+  ],
   "scripts": {
     "prestart": "babel-node scripts/startMessage.js",
     "start": "npm-run-all --parallel security-check lint:watch test:watch startServerDev",
@@ -29,7 +26,6 @@
     "build": "babel-node scripts/build.js",
     "postbuild": "babel-node scripts/serverProd.js"
   },
-
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
@@ -41,9 +37,9 @@
     "react-router-dom": "next",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
+    "tether": "^1.4.0",
     "toastr": "^2.1.2"
   },
-
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",

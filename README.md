@@ -29,6 +29,8 @@
 * lodash
 * Bootstrap 4
 * Fontawesome: because Bootstrap 4 no longer suppies glyphicons
+* Tether is required by Bootstrap 4
+* jquery is required by Bootstrap 4
 
 ### Webpack plugins
 * Dynamic HTML generation: html-webpack-plugin
@@ -39,4 +41,7 @@
 
 
 ### Credits
-This is a fork of `javascript-development-environment` by @coreyhouse
+This project took inspirations from :
+* `javascript-development-environment` by @coryhouse
+* `react-redux-react-router-es6` by @coryhouse
+* `bootstrap-4-playlist` by @iamshaunjp

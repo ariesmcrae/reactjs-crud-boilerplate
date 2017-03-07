@@ -119,7 +119,7 @@ export class AddOrEditCourseContainer extends React.Component {
         const heading = this.props.course.id ? 'Edit' : 'Add';
 
         return(
-            <div>
+            <div className="container">
                 <CourseForm 
                     heading={heading}
                     course={this.state.course}

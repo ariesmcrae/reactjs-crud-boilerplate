@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {NavLink} from 'react-router-dom';
-import Spinner from './Spinner';
+import Spinner from '../common/Spinner';
 
 
 

@@ -15,7 +15,7 @@
   "scripts": {
     "prestart": "babel-node scripts/startMessage.js",
     "start": "npm-run-all --parallel security-check lint:watch test:watch startServerDev",
-    "startServerDev": "babel-node scripts/serverDev.js",
+    "startServerDev": "babel-node ./scripts/serverDev.js",
     "security-check": "nsp check",
     "lint": "esw webpack.config.* src scripts --color",
     "lint:watch": "yarn lint -- --watch",

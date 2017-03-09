@@ -5,7 +5,7 @@ import Spinner from '../common/Spinner';
 
 
 
-class HeaderNav extends React.Component {
+class HeaderNavContainer extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-toggleable-sm bg-info navbar-inverse">
@@ -31,7 +31,7 @@ class HeaderNav extends React.Component {
 
 
 
-HeaderNav.propTypes = {
+HeaderNavContainer.propTypes = {
     apiCallsInProgress: PropTypes.bool.isRequired
 };
 
@@ -45,5 +45,5 @@ function mapStateToProps(state) {
 
 
 
-export default connect(mapStateToProps)(HeaderNav);
+export default connect(mapStateToProps)(HeaderNavContainer);
 

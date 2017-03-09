@@ -6,7 +6,7 @@ import CourseListContainer from './course/CourseListContainer'; // eslint-disabl
 import AddOrEditCourseContainer from './course/AddOrEditCourseContainer'; // eslint-disable-line import/no-named-as-default
 import About from './About';
 import createBrowserHistory from 'history/createBrowserHistory';
-import HeaderNav from './landing/HeaderNav';
+import HeaderNavContainer from './landing/HeaderNavContainer';
 
 
 
@@ -21,7 +21,7 @@ export default class App extends React.Component {
                 <Router history={history}>
                     <div>
                         
-                        <HeaderNav/>
+                        <HeaderNavContainer/>
                         
                         <Switch>
                             <Route exact path="/" component={Home}/>

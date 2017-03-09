@@ -1,15 +1,20 @@
 import React from 'react';
 import Header from './Header';
-import Content from './Content';
+import Section from './Section';
 import Footer from './Footer';
-
 
 
 const Home = () => {
     return (
         <div>
+            
             <Header/>
-            <Content/>
+
+            <div className="container text-muted">
+                <Section/>
+                <Footer/>
+            </div>
+            
         </div>
     );
 };

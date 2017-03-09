@@ -21,7 +21,7 @@
     "lint:watch": "yarn lint -- --watch",
     "test": "mocha --reporter list --compilers scripts/testSetup.js \"test/**/*.test.js\"",
     "test:watch": "yarn test -- --watch",
-    "clean-dist": "rimraf ./dist && mkdir dist",
+    "clean-dist": "node_modules/.bin/rimraf ./dist && mkdir ./dist",
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node scripts/build.js",
     "postbuild": "babel-node scripts/serverProd.js"

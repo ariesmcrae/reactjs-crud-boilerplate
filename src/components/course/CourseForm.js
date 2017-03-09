@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
 import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
-//import Button from '../common/Button';
 
 
 

@@ -6,15 +6,22 @@
 
 /* eslint-disable no-unused-vars*/
 
-import fetch from 'whatwg-fetch';
-
 import React, {PropTypes} from 'react';
 
+import {BrowserRouter, Route, Switch, withRouter, Link, NavLink} from 'react-router-dom';
 
-import {bindActionCreators, combineReducers, compose, applyMiddleware, createStore} from 'redux';
-import {connect} from 'react-redux';
-import thunk from 'redux-thunk';
+import {bindActionCreators, applyMiddleware, createStore} from 'redux';
+
+import {connect, Provider} from 'react-redux';
+
+import {render} from 'react-dom';
 
 import _ from 'lodash';
 
 import toastr from 'toastr';
+
+
+
+
+
+

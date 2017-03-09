@@ -23,7 +23,7 @@ export default {
     target: 'web',
 
     output: {
-        path: resolve(__dirname, '/dist'),
+        path: resolve(__dirname, './dist'),
         publicPath: '/',
         filename: '[name].[chunkhash].js'
     },

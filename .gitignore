@@ -4,3 +4,5 @@ npm-debug.log*
 # Dependency directories
 node_modules
 src/api/db.json
+
+dist/

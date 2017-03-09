@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Spinner from '../common/Spinner';
 
 

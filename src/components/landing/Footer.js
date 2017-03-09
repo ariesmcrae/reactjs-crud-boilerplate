@@ -9,7 +9,7 @@ const Footer = () => {
 
             <nav className="nav justify-content-center nav-pills flex-column flex-md-row">
                 <a className="nav-link active" href="#rest" data-toggle="tab">Mock REST</a>
-                <a className="nav-link" href="#livereload" data-toggle="tab">Live Reload</a>
+                <a className="nav-link" href="#livereload" data-toggle="tab">Hot Reloading</a>
                 <a className="nav-link" href="#es2015" data-toggle="tab">ES2015</a>
                 <a className="nav-link" href="#unittests" data-toggle="tab">Unit Tests</a>
             </nav>
@@ -25,8 +25,8 @@ const Footer = () => {
                 </div>
 
                 <div className="tab-pane" id="livereload">
-                    <h3>Live Reload</h3>
-                    <p>aka Hot Module Replacement</p>
+                    <h3>Hot Reloading</h3>
+                    <p>aka Live Reloading, aka Hot Module Replacement (HRM)</p>
                 </div>
 
                 <div className="tab-pane" id="es2015">

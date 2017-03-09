@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
+        <footer>
             <h2 className="display-4 text-center py-5 my-4">Features</h2>
 
             <nav className="nav justify-content-center nav-pills flex-column flex-md-row">
@@ -39,7 +39,7 @@ const Footer = () => {
                     <p>Mocha, Chai, Enzyme</p>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 };
 

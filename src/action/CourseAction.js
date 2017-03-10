@@ -2,7 +2,7 @@ import * as ActionType from './ActionType';
 import CourseApi from '../api/CourseApi';
 import {ApiCallBeginAction, ApiCallErrorAction} from './ApiAction';
 
-function getCoursesResponse(courses) {
+export function getCoursesResponse(courses) {
     return {
         type: ActionType.GET_COURSES_RESPONSE,
         courses
@@ -27,7 +27,7 @@ export function getCoursesAction() {
 
 
 
-function addNewCourseResponse(course) {
+export function addNewCourseResponse(course) {
     return {
         type: ActionType.ADD_NEW_COURSE_RESPONSE,
         course
@@ -35,7 +35,7 @@ function addNewCourseResponse(course) {
 }
 
 
-function updateExistingCourseResponse(course) {
+export function updateExistingCourseResponse(course) {
     return {
         type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE,
         course

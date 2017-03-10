@@ -3,7 +3,7 @@ import AuthorApi from '../api/AuthorApi';
 import {ApiCallBeginAction} from './ApiAction';
 
 
-function getAuthorsResponse(authors) {
+export function getAuthorsResponse(authors) {
     return {
         type: ActionType.GET_AUTHORS_RESPONSE,
         authors

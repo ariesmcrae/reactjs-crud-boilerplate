@@ -6,7 +6,7 @@ import * as ActionType from '../../src/action/ActionType';
 
 describe('CourseAction', () => {
 
-    describe('addNewCourse', () => {
+    describe('addNewCourseResponse', () => {
          it(`should create action ${ActionType.ADD_NEW_COURSE_RESPONSE}`, () => {
             const course = {title: 'Learn reactjs redux'};
             const expectedAction = {

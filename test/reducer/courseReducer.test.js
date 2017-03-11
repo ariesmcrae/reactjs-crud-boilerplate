@@ -26,18 +26,21 @@ describe('courseReducer', ()  => {
 
     it(`should update course when passed ${ActionType.UPDATE_EXISTING_COURSE_RESPONSE}`, () => {
         const initialState = {
-            courses: [{id: 1, title: 'A'}, {id: 2, title: 'B'}]
+            courses: [{id: 1, title: 'A'}, {id: 2, title: 'B'}, {id: 2, title: 'C'}]
         };
 
-        const updatedCourse = {id: 2, title: 'C'};
+        const courseToBeUpdated = {id: 2, title: 'BB'};
 
-        const action = CourseActions.updateExistingCourseResponse(updatedCourse);
+        const action = CourseActions.updateExistingCourseResponse(courseToBeUpdated);
 
         const newState = courseReducer(initialState, action);
 
-        expect(newState.courses.length).to.equal(2);
-        expect(newState.courses[0].title).to.equal('A');
-        expect(newState.courses[1].title).to.equal('C');
+        const updatedCourse = newState.courses.find(course => course.id === courseToBeUpdated.id);
+        const untouchedCourse = newState.courses.find(course => course.id === 1);
+
+        expect(updatedCourse.title).to.equal('BB');
+        expect(untouchedCourse.title).to.equal('A');
+        expect(newState.courses.length).to.equal(3);
     });
 
 

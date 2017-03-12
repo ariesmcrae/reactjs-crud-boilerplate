@@ -17,4 +17,15 @@ describe('ApiAction', () => {
     });
 
 
+    describe('ApiCallError', () => {
+         it(`should create action ${ActionType.API_CALL_ERROR}`, () => {
+            const expectedAction = {type: ActionType.API_CALL_ERROR};
+
+            const actualAction = ApiActions.ApiCallErrorAction();
+            
+            expect(actualAction).to.deep.equal(expectedAction);
+         });
+    });    
+
+
 });

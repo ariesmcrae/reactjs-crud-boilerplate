@@ -30,6 +30,7 @@
 * Fontawesome: because Bootstrap 4 no longer suppies glyphicons
 * Tether is required by Bootstrap 4
 * jquery is required by Bootstrap 4
+* thunk testing: nock (for mocking http calls), and redux-mock-store
 
 ### Webpack plugins
 * Dynamic HTML generation: html-webpack-plugin

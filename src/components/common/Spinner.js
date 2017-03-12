@@ -34,7 +34,7 @@ class Spinner extends React.Component {
       text += '.';
       dots--;
     }
-    return <span {...this.props}>{text}&nbsp;</span>;
+    return <span>{text}&nbsp;</span>;
   }
 }
 

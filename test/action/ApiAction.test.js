@@ -4,9 +4,9 @@ import * as ActionType from '../../src/action/ActionType';
 
 
 
-describe('ApiAction', () => {
+describe('ApiAction.test.js', () => {
 
-    describe('ApiCallBegin', () => {
+    describe('ApiCallBeginActionCreator', () => {
          it(`should create action ${ActionType.API_CALL_BEGIN}`, () => {
             const expectedAction = {type: ActionType.API_CALL_BEGIN};
 
@@ -17,7 +17,7 @@ describe('ApiAction', () => {
     });
 
 
-    describe('ApiCallError', () => {
+    describe('ApiCallErrorActionCreator', () => {
          it(`should create action ${ActionType.API_CALL_ERROR}`, () => {
             const expectedAction = {type: ActionType.API_CALL_ERROR};
 

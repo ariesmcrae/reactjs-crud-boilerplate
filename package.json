@@ -19,7 +19,7 @@
     "security-check": "nsp check",
     "lint": "esw webpack.config.* src scripts --color",
     "lint:watch": "yarn lint -- --watch",
-    "test": "mocha --reporter spec --compilers scripts/testSetup.js test/**/*.test.js",
+    "test": "mocha --reporter spec --compilers scripts/testSetup.js --recursive test",
     "test:watch": "yarn test -- --watch",
     "clean-dist": "node_modules/.bin/rimraf dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",

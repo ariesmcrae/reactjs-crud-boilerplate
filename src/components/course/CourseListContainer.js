@@ -41,16 +41,16 @@ export class CourseListContainer extends React.Component {
             <div className="container">
                 <h1>Courses</h1>
                 
-                <br/><br/>
+                
 
                 <button 
                     type="button" 
-                    className="btn btn-primary"
+                    className="btn btn-primary my-5"
                     onClick={this.handleAddCourse}>
                     Add
                 </button>
                 
-                <br/><br/><br/>
+             
                 
                 <CourseList courses={courses}/>
             </div>            

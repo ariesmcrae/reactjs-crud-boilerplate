@@ -30,20 +30,20 @@ describe('CourseForm.test.js', () => {
     });
 
 
-    it('display "Edit" in h1', () => {
+    it('displays "Edit" in h1', () => {
         const wrapper = setup('Edit', false);
         expect(wrapper.find('h1').text()).to.equal('Edit');
     });
 
 
-    it('save button is labeled "Save" when not saving', () => {
+    it('shows "Save" button when not saving', () => {
         const wrapper = setup('Add', false);
         expect(wrapper.find('input').props().value).to.equal('Save');
     });
 
 
 
-    it('save button is labeled "Saving..." when saving', () => {
+    it('shows "Saving..." button when saving', () => {
         const wrapper = setup('Add', true);
         expect(wrapper.find('input').props().value).to.equal('Saving...');
     });

@@ -4,7 +4,7 @@ import {mount} from 'enzyme';
 import {AddOrEditCourseContainer} from '../../../src/components/course/AddOrEditCourseContainer';
 
 
-describe('AddOrEditCourseContainer.test', () => {
+describe('AddOrEditCourseContainer.test.js', () => {
 
     it('sets an error message when trying to save empty title', () => {
         const props = {

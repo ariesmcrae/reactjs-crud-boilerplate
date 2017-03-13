@@ -5,7 +5,7 @@ import PageNotFound from '../../../src/components/common/PageNotFound';
 
 
 describe('PageNotFound.test.js', () => {
-    it('renders', () => {
+    it('should render', () => {
         const props = { location:{pathName: '/blah'}};
         const wrapper = shallow(<PageNotFound {...props}/>);
         expect(wrapper.length).to.equal(1);

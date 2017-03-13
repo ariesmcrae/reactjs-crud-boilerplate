@@ -5,7 +5,7 @@ import Spinner from '../common/Spinner';
 
 
 
-class HeaderNavContainer extends React.Component {
+export class HeaderNavContainer extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-toggleable-sm bg-info navbar-inverse">
@@ -20,7 +20,9 @@ class HeaderNavContainer extends React.Component {
                             <NavLink className="nav-item nav-link" to="/courses" activeClassName="active">Courses</NavLink>
                             <NavLink className="nav-item nav-link" to="/about" activeClassName="active">About</NavLink>
 
-                            &nbsp; &nbsp; &nbsp; {this.props.apiCallsInProgress && <Spinner className="nav-item nav-link" interval={100} dots={20} />}
+                            <span className="ml-5 mt-2">
+                            {this.props.apiCallsInProgress && <Spinner className="nav-item nav-link" interval={100} dots={20} />}
+                            </span>
                         </div>
                     </div>
                 </div>

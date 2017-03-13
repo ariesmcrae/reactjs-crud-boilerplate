@@ -6,7 +6,7 @@ import CourseListContainer from './course/CourseListContainer'; // eslint-disabl
 import AddOrEditCourseContainer from './course/AddOrEditCourseContainer'; // eslint-disable-line import/no-named-as-default
 import About from './About';
 import createBrowserHistory from 'history/createBrowserHistory';
-import HeaderNavContainer from './landing/HeaderNavContainer';
+import HeaderNavContainer from './landing/HeaderNavContainer'; // eslint-disable-line import/no-named-as-default
 
 
 

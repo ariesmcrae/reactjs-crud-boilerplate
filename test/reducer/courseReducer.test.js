@@ -1,11 +1,11 @@
 import {expect} from 'chai';
 import courseReducer from '../../src/reducer/courseReducer';
-import * as CourseActions from '../../src/action/CourseAction';
+import * as CourseAction from '../../src/action/CourseAction';
 import * as ActionType from '../../src/action/ActionType';
 
 
 
-describe('courseReducer', ()  => {
+describe('courseReducer.test.js', ()  => {
 
     it(`should add course when passed ${ActionType.ADD_NEW_COURSE_RESPONSE}`, () => {
         const initialState = {
@@ -14,7 +14,7 @@ describe('courseReducer', ()  => {
 
         const newCourse = {title: 'C'};
 
-        const action = CourseActions.addNewCourseResponse(newCourse);
+        const action = CourseAction.addNewCourseResponse(newCourse);
 
         const newState = courseReducer(initialState, action);
 
@@ -31,7 +31,7 @@ describe('courseReducer', ()  => {
 
         const courseToBeUpdated = {id: 2, title: 'BB'};
 
-        const action = CourseActions.updateExistingCourseResponse(courseToBeUpdated);
+        const action = CourseAction.updateExistingCourseResponse(courseToBeUpdated);
 
         const newState = courseReducer(initialState, action);
 

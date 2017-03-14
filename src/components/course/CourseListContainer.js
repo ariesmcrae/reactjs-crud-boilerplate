@@ -24,7 +24,7 @@ export class CourseListContainer extends React.Component {
 
     
     handleAddCourse() {
-        this.props.history.push('/course');
+        this.props.history.push('/courses/course');
     }
 
 

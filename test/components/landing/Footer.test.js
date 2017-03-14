@@ -6,7 +6,7 @@ import Footer from '../../../src/components/landing/Footer';
 
 describe('Footer.test.js', () => {
 
-    it('renders Footer', () => {
+    it('renders', () => {
         
         const wrapper = shallow(<Footer />);
 

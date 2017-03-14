@@ -6,7 +6,7 @@ import CourseList from '../../../src/components/course/CourseList';
 
 describe('CourseList.test.js', () => {
 
-    it('displays CourseListRow', () => {
+    it('renders', () => {
         const props = {
             courses: [
                 { id: 1, title: 'Java Clean Code' },

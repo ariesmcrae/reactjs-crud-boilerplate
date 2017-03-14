@@ -6,7 +6,7 @@ import Header from '../../../src/components/landing/Header';
 
 describe('Header.test.js', () => {
 
-    it('renders Header', () => {
+    it('renders', () => {
         
         const wrapper = shallow(<Header />);
 

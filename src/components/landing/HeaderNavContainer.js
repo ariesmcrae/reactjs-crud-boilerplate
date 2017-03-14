@@ -20,7 +20,7 @@ export class HeaderNavContainer extends React.Component {
                             <NavLink className="nav-item nav-link" to="/courses" activeClassName="active">Courses</NavLink>
                             <NavLink className="nav-item nav-link" to="/about" activeClassName="active">About</NavLink>
 
-                            <span className="ml-5 mt-2">
+                            <span className="ml-5">
                             {this.props.apiCallsInProgress && <Spinner className="nav-item nav-link" interval={100} dots={20} />}
                             </span>
                         </div>

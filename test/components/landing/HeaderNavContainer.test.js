@@ -6,7 +6,7 @@ import {HeaderNavContainer} from '../../../src/components/landing/HeaderNavConta
 
 describe('HeaderNavContainer.test.js', () => {
 
-    it('renders Header', () => {
+    it('renders', () => {
         const props = { apiCallsInProgress: false }
         const wrapper = shallow(<HeaderNavContainer {...props}/>);
 

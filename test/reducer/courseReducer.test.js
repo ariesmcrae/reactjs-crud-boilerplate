@@ -44,4 +44,20 @@ describe('courseReducer.test.js', ()  => {
     });
 
 
+    it(`should get all courses when passed ${ActionType.GET_COURSES_RESPONSE}`, () => {
+        const initialState = {
+            courses: []
+        };
+
+        const courses = [{id: 1, title: 'A'}, {id: 2, title: 'B'}];
+
+        const action = CourseAction.getCoursesResponse(courses);
+
+        const newState = courseReducer(initialState, action);
+
+        expect(newState.courses.length).to.equal(2);
+        expect(newState.courses[0].id).to.equal(1);
+    });    
+
+
 });

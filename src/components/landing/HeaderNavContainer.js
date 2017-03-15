@@ -16,12 +16,12 @@ export class HeaderNavContainer extends React.Component {
 
                     <div className="collapse navbar-collapse" id="mainNav">
                         <div className="navbar-nav">
-                            <NavLink className="nav-item nav-link active" to="/" activeClassName="active">Home</NavLink>
-                            <NavLink className="nav-item nav-link" to="/courses" activeClassName="active">Courses</NavLink>
-                            <NavLink className="nav-item nav-link" to="/about" activeClassName="active">About</NavLink>
+                            <NavLink className="nav-item nav-link" exact activeClassName="active" to="/">Home</NavLink>
+                            <NavLink className="nav-item nav-link" activeClassName="active" to="/courses" >Courses</NavLink>
+                            <NavLink className="nav-item nav-link" activeClassName="active" to="/about">About</NavLink>
 
                             <span className="ml-5">
-                            {this.props.apiCallsInProgress && <Spinner className="nav-item nav-link" interval={100} dots={20} />}
+                                {this.props.apiCallsInProgress && <Spinner className="nav-item nav-link" interval={100} dots={20} />}
                             </span>
                         </div>
                     </div>

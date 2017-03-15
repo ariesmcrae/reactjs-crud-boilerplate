@@ -25,10 +25,10 @@ export default class App extends React.Component {
                         
                         <Switch>
                             <Route exact path="/" component={Home}/>
-                            <Route exact path="/courses" component={CourseListContainer}/>
-                            <Route exact path="/courses/course" component={AddOrEditCourseContainer}/>                
-                            <Route exact path="/courses/course/:id" component={AddOrEditCourseContainer}/>        
-                            <Route exact path="/about" component={About}/>
+                            <Route path="/courses" component={CourseListContainer}/>
+                            <Route exact path="/course" component={AddOrEditCourseContainer}/>                
+                            <Route path="/course/:id" component={AddOrEditCourseContainer}/>
+                            <Route path="/about" component={About}/>                            
                             <Route component={PageNotFound}/>
                         </Switch>                        
 

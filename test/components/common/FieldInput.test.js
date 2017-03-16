@@ -6,7 +6,16 @@ import FieldInput from '../../../src/components/common/FieldInput';
 
 describe('FieldInput.test.js', () => {
     it('renders', () => {
-        const props = { name: 'Category', label: 'Category', onChange: () => {} };
+        const props = { 
+            input: {},
+            type: 'text',
+            name: 'category', 
+            label: 'Category', 
+            placeholder: 'Category',
+            meta: {touched: false, error:{}, warning: {}},
+            onChange: () => {} 
+        };
+
         const wrapper = shallow(<FieldInput {...props}/>);
        
         expect(wrapper.length).to.equal(1);

@@ -1,20 +1,19 @@
 import React from 'react';
 import {expect} from 'chai';
 import {shallow} from 'enzyme';
-import CourseForm from '../../../src/components/course/CourseForm';
+import {CourseForm} from '../../../src/components/course/CourseForm';
 
 
 
-function setup(heading, isSaving) {
+function setup(heading) {
     const props = {
+        handleSubmit: () => {},
+        pristine: true,
+        submitting: false,
         heading: heading,
-        course: {authorId: '1'},
         authors: [],
-        errors: {},
-        onChange: () => {},
-        onSave: () => {},
-        onCancel: () => {},
-        isSaving: isSaving
+        handleSave: () => {},
+        handleCancel: () => {},
     };
 
     return shallow(<CourseForm {...props}/>);
@@ -24,29 +23,18 @@ function setup(heading, isSaving) {
 describe('CourseForm.test.js', () => {
 
     it('renders form and display "Add" in h1', () => {
-        const wrapper = setup('Add', false);
+        const wrapper = setup('Add');
+        expect(wrapper.length).to.equal(1);
         expect(wrapper.find('form').length).to.equal(1);
         expect(wrapper.find('h1').text()).to.equal('Add');
     });
 
 
     it('displays "Edit" in h1', () => {
-        const wrapper = setup('Edit', false);
+        const wrapper = setup('Edit');
         expect(wrapper.find('h1').text()).to.equal('Edit');
     });
 
-
-    it('shows "Save" button when not saving', () => {
-        const wrapper = setup('Add', false);
-        expect(wrapper.find('input').props().value).to.equal('Save');
-    });
-
-
-
-    it('shows "Saving..." button when saving', () => {
-        const wrapper = setup('Add', true);
-        expect(wrapper.find('input').props().value).to.equal('Saving...');
-    });
     
 });
 

@@ -6,8 +6,17 @@ import SelectInput from '../../../src/components/common/SelectInput';
 
 describe('SelectInput.test.js', () => {
     it('renders', () => {
-        const props = { name: 'Category', value: 'Javascript', label: 'Category', onChange: () => {}, options:[{value: 'Josh', text: 'Bloch'}]};
+        const props = { 
+            input:{},
+            name: 'category',
+            label: 'Category',
+            defaultOption: '',
+            options:[{value: 'Josh', text: 'Bloch'}],
+            meta: {touched: false, error:{}, warning: {}},            
+        };
+
         const wrapper = shallow(<SelectInput {...props}/>);
+        
         expect(wrapper.length).to.equal(1);
     });    
 });

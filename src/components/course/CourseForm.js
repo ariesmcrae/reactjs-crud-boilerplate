@@ -4,7 +4,7 @@ import FieldInput from '../common/FieldInput';
 import SelectInput from '../common/SelectInput';
 
 
-class CourseForm extends React.Component {
+export class CourseForm extends React.Component {
 
     render() {
         const {handleSubmit, pristine, reset, submitting, heading, authors, handleSave, handleCancel} = this.props;

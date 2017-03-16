@@ -1,24 +1,34 @@
 import React from 'react';
 import {expect} from 'chai';
-import {mount} from 'enzyme';
+import {shallow} from 'enzyme';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import {AddOrEditCourseContainer} from '../../../src/components/course/AddOrEditCourseContainer';
 
 
 describe('AddOrEditCourseContainer.test.js', () => {
+    let store;
+    
+    beforeEach(() => {
+        const thunkMiddleware = [thunk];
+        const mockStore = configureMockStore(thunkMiddleware);
+        const initialState = {course:{}};
+        store = mockStore(initialState);
+    });
 
     it('sets an error message when trying to save empty title', () => {
         const props = {
+            action: {
+                getCourseAction: () => {return Promise.resolve();},
+                getAuthorsAction: () => {return Promise.resolve();}
+            },
             authors:[],
-            action: {getAuthorsAction: () => {return Promise.resolve();}},
-            course: {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''}
+            initialValues: {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''},
+            match: {params: {id:'1'}}
         };
 
-        const wrapper = mount(<AddOrEditCourseContainer {...props}/>);
-        const saveButton = wrapper.find('input').last();
-        expect(saveButton.prop('type')).to.equal('submit');        
-
-        saveButton.simulate('click');
-        expect(wrapper.state().errors.title).to.equal('Title must be at least 5 characters.');
+        const wrapper = shallow(<AddOrEditCourseContainer store={store} {...props}/>);
+        expect(wrapper.length).to.equal(1);        
     });
 
 });

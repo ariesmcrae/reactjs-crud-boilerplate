@@ -28,6 +28,7 @@ export class AddCourseContainer extends React.Component {
 
     handleSave(values) {
         const course = {
+            id: values.id,
             title: values.title,
             authorId: values.authorId,
             category: values.category,
@@ -46,12 +47,16 @@ export class AddCourseContainer extends React.Component {
 
     
     render() {
+        const {initialValues} = this.props;
+        const heading = initialValues && initialValues.id ? 'Edit' : 'Add';
+
         return(
             <div className="container">
                 <CourseForm2 
-                    heading={'Add'}
+                    heading={heading}
                     authors={this.props.authors}                    
                     handleSave={this.handleSave}
+                    initialValues={this.props.initialValues}
                 />
             </div> 
         );
@@ -59,10 +64,34 @@ export class AddCourseContainer extends React.Component {
 }
 
 
+
 function mapStateToProps(state, ownProps) {
-    return {
-        authors: authorsFormattedForDropdown(state.authorReducer.authors)
-    };
+    const courseId = ownProps.match.params.id; //from the path '/course/:id'
+
+    if (courseId && state.courseReducer.courses.length > 0) {
+        const course = getCourseById(state.courseReducer.courses, courseId);
+
+        return {
+            initialValues: course,
+            authors: authorsFormattedForDropdown(state.authorReducer.authors)
+        };
+    } else {
+        return {
+            authors: authorsFormattedForDropdown(state.authorReducer.authors)
+        };
+    }
+}
+
+
+
+function getCourseById(courses, courseId) {
+    const course = courses.filter(course => course.id == courseId); //since filter returns an array, have to grab the first.
+
+    if (course) {
+        return course[0];
+    } else {
+        return null;
+    }
 }
 
 
@@ -76,7 +105,8 @@ function mapDispatchToProps(dispatch) {
 AddCourseContainer.propTypes = {
     action: PropTypes.object.isRequired,
     history: PropTypes.object,
-    authors: PropTypes.array    
+    authors: PropTypes.array,
+    initialValues: PropTypes.object
 };
 
 

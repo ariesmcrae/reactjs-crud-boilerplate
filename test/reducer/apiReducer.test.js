@@ -6,7 +6,7 @@ import * as ActionType from '../../src/action/ActionType';
 
 
 
-describe('courseReducer', ()  => {
+describe('apiReducer', ()  => {
 
     it(`should increment apiCallsInProgress when passed ${ActionType.API_CALL_BEGIN}`, () => {
         const initialState = {

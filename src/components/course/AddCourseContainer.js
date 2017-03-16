@@ -11,13 +11,21 @@ import {authorsFormattedForDropdown} from '../../selectors/selectors';
 
 export class AddCourseContainer extends React.Component {
 
+
     constructor() {
         super();
         this.handleSave = this.handleSave.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
 
+
     componentDidMount() {
+        this.props.action.getCourseAction(this.props.match.params.id)
+            .catch(error => {
+                toastr.error(error);
+            });   
+                    
         this.props.action.getAuthorsAction()
             .catch(error => {
                 toastr.error(error);
@@ -30,9 +38,10 @@ export class AddCourseContainer extends React.Component {
         const course = {
             id: values.id,
             title: values.title,
+            watchHref: values.watchHref,
             authorId: values.authorId,
-            category: values.category,
-            length: values.length
+            length: values.length,
+            category: values.category
         };
 
         this.props.action.saveCourseAction(course)
@@ -42,6 +51,13 @@ export class AddCourseContainer extends React.Component {
             }).catch(error => {
                 toastr.error(error);
             });     
+    }
+
+
+
+    handleCancel(event) {
+        event.preventDefault();
+        this.props.history.replace('/courses');
     }
 
 
@@ -56,6 +72,7 @@ export class AddCourseContainer extends React.Component {
                     heading={heading}
                     authors={this.props.authors}                    
                     handleSave={this.handleSave}
+                    handleCancel={this.handleCancel}
                     initialValues={this.props.initialValues}
                 />
             </div> 
@@ -68,11 +85,9 @@ export class AddCourseContainer extends React.Component {
 function mapStateToProps(state, ownProps) {
     const courseId = ownProps.match.params.id; //from the path '/course/:id'
 
-    if (courseId && state.courseReducer.courses.length > 0) {
-        const course = getCourseById(state.courseReducer.courses, courseId);
-
+    if (courseId && state.selectedCourseReducer.course && courseId === state.selectedCourseReducer.course.id) {
         return {
-            initialValues: course,
+            initialValues: state.selectedCourseReducer.course,
             authors: authorsFormattedForDropdown(state.authorReducer.authors)
         };
     } else {
@@ -82,17 +97,6 @@ function mapStateToProps(state, ownProps) {
     }
 }
 
-
-
-function getCourseById(courses, courseId) {
-    const course = courses.filter(course => course.id == courseId); //since filter returns an array, have to grab the first.
-
-    if (course) {
-        return course[0];
-    } else {
-        return null;
-    }
-}
 
 
 function mapDispatchToProps(dispatch) {
@@ -106,7 +110,8 @@ AddCourseContainer.propTypes = {
     action: PropTypes.object.isRequired,
     history: PropTypes.object,
     authors: PropTypes.array,
-    initialValues: PropTypes.object
+    initialValues: PropTypes.object,
+    match: PropTypes.object.isRequired
 };
 
 

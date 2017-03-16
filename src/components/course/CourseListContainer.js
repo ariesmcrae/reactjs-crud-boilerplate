@@ -40,8 +40,6 @@ export class CourseListContainer extends React.Component {
         return (
             <div className="container">
                 <h1>Courses</h1>
-                
-                
 
                 <button 
                     type="button" 
@@ -49,8 +47,6 @@ export class CourseListContainer extends React.Component {
                     onClick={this.handleAddCourse}>
                     Add
                 </button>
-                
-             
                 
                 <CourseList courses={courses}/>
             </div>            
@@ -63,7 +59,7 @@ export class CourseListContainer extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        courses: state.courseReducer.courses
+        courses: state.coursesReducer.courses
     };
 }
 

@@ -61,3 +61,29 @@ export function saveCourseAction(courseBeingAddedOrEdited) {
             });
     };
 }
+
+
+
+export function getCourseResponse(courseFound) {
+    return {
+        type: ActionType.GET_COURSE_RESPONSE,
+        course: courseFound 
+    };
+}
+
+
+
+export function getCourseAction(courseId) {
+    return(dispatch) => {
+        
+        dispatch(ApiCallBeginAction());
+
+        return CourseApi.getCourse(courseId)
+            .then(course => {
+                dispatch(getCourseResponse(course));
+            }).catch(error => {
+                throw error;
+            });
+    };
+}
+

@@ -7,8 +7,7 @@ import SelectInput2 from '../common/SelectInput2';
 class CourseForm2 extends React.Component {
 
     render() {
-        const {handleSubmit, pristine, reset, submitting, heading, authors, handleSave} = this.props;
-        //debugger;
+        const {handleSubmit, pristine, reset, submitting, heading, authors, handleSave, handleCancel} = this.props;
 
         return (
             <form onSubmit={handleSubmit(handleSave)}>
@@ -47,7 +46,10 @@ class CourseForm2 extends React.Component {
 
                 <div>
                     <button type="submit" disabled={submitting} className="btn btn-primary"><i className="fa fa-paper-plane-o" aria-hidden="true"/> Submit</button>
-                    <button type="button" disabled={pristine || submitting} onClick={reset} className="btn btn-default btn-space">Clear Values</button>
+
+                    {heading === 'Add' && <button type="button" disabled={pristine || submitting} onClick={reset} className="btn btn-default btn-space">Clear Values</button>}
+                    
+                    <button type="button" className="btn btn-default btn-space" onClick={handleCancel}>Cancel</button>
                 </div>
             </form>
         );
@@ -88,7 +90,8 @@ CourseForm2.propTypes = {
     submitting: PropTypes.bool.isRequired,
     heading: PropTypes.string.isRequired,
     authors: PropTypes.array.isRequired,    
-    handleSave: PropTypes.func.isRequired
+    handleSave: PropTypes.func.isRequired,
+    handleCancel: PropTypes.func.isRequired
 };
 
 

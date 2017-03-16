@@ -3,7 +3,7 @@ import initialState from './initialState';
 import _ from 'lodash';
 
 
-export default function courseReducer(state = initialState.courseReducer, action) {
+export default function coursesReducer(state = initialState.coursesReducer, action) {
     switch(action.type) {
         case ActionType.GET_COURSES_RESPONSE: {
             // '...' spread operator clones the state
@@ -16,10 +16,10 @@ export default function courseReducer(state = initialState.courseReducer, action
         }
         
         case ActionType.ADD_NEW_COURSE_RESPONSE: {
-            //Get the existing courseReducer.courses
+            //Get the existing coursesReducer.courses from state
             let clonedCourses = _.assign(state.courses);
             
-            //add action.course into courseReducer.courses
+            //add action.course into coursesReducer.courses
             clonedCourses.push(_.assign(action.course));
             
             return {
@@ -29,21 +29,23 @@ export default function courseReducer(state = initialState.courseReducer, action
         }
 
         case ActionType.UPDATE_EXISTING_COURSE_RESPONSE: {
-            //Get the existing courseReducer.courses
+            //Get the existing coursesReducer.courses from state
             let clonedCourses = _.assign(state.courses);
 
-            //find the course in the courseReducer.courses to be updated.
+            //find the course in the coursesReducer.courses to be updated.
             const foundIndex = clonedCourses.findIndex(course => course.id === action.course.id); 
 
-            //Replace the existing course in courseReducer.courses with the updated one from action.course
+            //Replace the existing course in coursesReducer.courses with the updated one from action.course
             clonedCourses[foundIndex] = _.assign(action.course);
 
-            //replace courseReducer.courses with clonedCourses.
+            //replace coursesReducer.courses with clonedCourses.
             return {
                 ...state,
                 courses: clonedCourses
             };
         }
+
+
 
         default: { return state; }
     }

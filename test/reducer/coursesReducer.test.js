@@ -1,11 +1,11 @@
 import {expect} from 'chai';
-import courseReducer from '../../src/reducer/courseReducer';
+import coursesReducer from '../../src/reducer/coursesReducer';
 import * as CourseAction from '../../src/action/CourseAction';
 import * as ActionType from '../../src/action/ActionType';
 
 
 
-describe('courseReducer.test.js', ()  => {
+describe('coursesReducer.test.js', ()  => {
 
     it(`should add course when passed ${ActionType.ADD_NEW_COURSE_RESPONSE}`, () => {
         const initialState = {
@@ -16,7 +16,7 @@ describe('courseReducer.test.js', ()  => {
 
         const action = CourseAction.addNewCourseResponse(newCourse);
 
-        const newState = courseReducer(initialState, action);
+        const newState = coursesReducer(initialState, action);
 
         expect(newState.courses.length).to.equal(3);
         expect(newState.courses[0].title).to.equal('A');
@@ -33,7 +33,7 @@ describe('courseReducer.test.js', ()  => {
 
         const action = CourseAction.updateExistingCourseResponse(courseToBeUpdated);
 
-        const newState = courseReducer(initialState, action);
+        const newState = coursesReducer(initialState, action);
 
         const updatedCourse = newState.courses.find(course => course.id === courseToBeUpdated.id);
         const untouchedCourse = newState.courses.find(course => course.id === 1);
@@ -53,7 +53,7 @@ describe('courseReducer.test.js', ()  => {
 
         const action = CourseAction.getCoursesResponse(courses);
 
-        const newState = courseReducer(initialState, action);
+        const newState = coursesReducer(initialState, action);
 
         expect(newState.courses.length).to.equal(2);
         expect(newState.courses[0].id).to.equal(1);

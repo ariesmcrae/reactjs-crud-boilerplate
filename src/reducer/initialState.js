@@ -5,8 +5,12 @@ export default {
         authors: []
     },
 
-    courseReducer: {
+    coursesReducer: {
         courses: []
+    },
+
+    selectedCourseReducer: {
+        course: null
     },
 
     apiReducer: {

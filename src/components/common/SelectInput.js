@@ -1,15 +1,15 @@
 import React, {PropTypes} from 'react';
 
-export default function SelectInput({name, label, value, onChange, defaultOption, error, options}) {
+export default function SelectInput({input, name, label, defaultOption, options, meta: {touched, error, warning}}) {
+
     return(
         <div className="form-group">
-            <div htmlFor={name}>{label}</div>
+            <div htmlFor={'authorId'}>{label}</div>
             <div className="field">
                 <select
-                    name={name}
-                    value={value}
+                    {...input}
+                    name={'authorId'}
                     className="form-control"
-                    onChange={onChange}
                 >
                     <option>{defaultOption}</option>
                     {
@@ -18,7 +18,9 @@ export default function SelectInput({name, label, value, onChange, defaultOption
                         })
                     }
                 </select>
-                {error && <div className="alert alert-danger">{error}</div>}
+
+                    {touched && ((error && <p className="text-danger">{error}</p>) || (warning && <p className="text-danger">{warning}</p>))}
+
             </div>
         </div>
     );
@@ -27,11 +29,10 @@ export default function SelectInput({name, label, value, onChange, defaultOption
 
 
 SelectInput.propTypes = {
-    name: PropTypes.string.isRequired,
+    input: PropTypes.object.isRequired,
+    name: PropTypes.string,    
     label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
     defaultOption: PropTypes.string,
-    error: PropTypes.string,
-    options: PropTypes.arrayOf(PropTypes.object)
+    options: PropTypes.arrayOf(PropTypes.object),
+    meta: PropTypes.object.isRequired
 };

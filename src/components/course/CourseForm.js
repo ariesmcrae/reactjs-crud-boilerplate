@@ -1,78 +1,102 @@
 import React, {PropTypes} from 'react';
-import TextInput from '../common/TextInput';
+import { Field, reduxForm } from 'redux-form';
+import FieldInput from '../common/FieldInput';
 import SelectInput from '../common/SelectInput';
 
 
+class CourseForm extends React.Component {
 
-export default function CourseForm({heading, course, authors, errors, onChange, onSave, onCancel, isSaving}) {
-    return(
-         <form>
-            <h1>{heading}</h1>
-            <TextInput 
-                name="title"
-                label="Title"
-                placeholder="Title of the course"
-                value={course.title}
-                onChange={onChange}
-                error = {errors.title}
-            />
+    render() {
+        const {handleSubmit, pristine, reset, submitting, heading, authors, handleSave, handleCancel} = this.props;
 
-            <SelectInput 
-                name="authorId"
-                label="Author"
-                value={course.authorId}
-                defaultOption="Select Author"
-                options={authors}
-                onChange={onChange}
-                error={errors.authorId}
-            />
+        return (
+            <form onSubmit={handleSubmit(handleSave)}>
+                <h1>{heading}</h1>
 
-            <TextInput 
-                name="category"
-                label="Category"
-                value={course.category}
-                placeholder="Category of the course"
-                onChange={onChange}
-                error={errors.category}
-            />          
+                <Field
+                    type="text"
+                    name="title"
+                    label="Title"
+                    placeholder="Title of the course"
+                    component={FieldInput}
+                />
 
-            <TextInput 
-                name="length"
-                label="Length"
-                value={course.length}
-                placeholder="Lenght of course in minutes or hours"
-                onChange={onChange}
-                error={errors.length}
-            />
+                <Field 
+                    name="authorId"
+                    label="Author"
+                    options={authors}
+                    component={SelectInput}                    
+                />                
 
-            <input 
-                type="submit" 
-                className="btn btn-primary" 
-                onClick={onSave}
-                value={isSaving ? 'Saving...' : 'Save'}
-                disabled={isSaving}
-            />
-            
-            <button 
-                type="button"
-                className="btn btn-default btn-space"
-                onClick={onCancel}                
-            >
-                Cancel
-            </button>
-        </form>        
-    );
+                <Field 
+                    type="text"                    
+                    name="category"
+                    label="Category"
+                    placeholder="Category of the course"
+                    component={FieldInput}
+                />        
+
+                <Field 
+                    type="text"                
+                    name="length"
+                    label="Length"
+                    placeholder="Lenght of course in minutes or hours"
+                    component={FieldInput}                    
+                />                         
+
+                <div>
+                    <button type="submit" disabled={submitting} className="btn btn-primary"><i className="fa fa-paper-plane-o" aria-hidden="true"/> Submit</button>
+
+                    {heading === 'Add' && <button type="button" disabled={pristine || submitting} onClick={reset} className="btn btn-default btn-space">Clear Values</button>}
+                    
+                    <button type="button" className="btn btn-default btn-space" onClick={handleCancel}>Cancel</button>
+                </div>
+            </form>
+        );
+    }
 }
 
 
 
-CourseForm.propTypes = {
-    heading:    PropTypes.string.isRequired,
-    course:     PropTypes.object.isRequired,
-    authors:    PropTypes.array.isRequired,
-    errors:     PropTypes.object,
-    onChange:   PropTypes.func.isRequired,
-    onSave:     PropTypes.func.isRequired,
-    onCancel:   PropTypes.func.isRequired,
-    isSaving:   PropTypes.bool.isRequired
+
+const validate = values => {
+    const errors = {};
+
+    if (!values.title) {
+        errors.title = 'Required';
+    }
+
+    if (!values.category) {
+        errors.category = 'Required';
+    }    
+
+    if (!values.length) {
+        errors.length = 'Required';
+    }
+    
+    if (!values.authorId) {
+        errors.authorId = 'Required';
+    }     
+
+    return errors;
 };
+
+
+
+CourseForm.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    pristine: PropTypes.bool.isRequired,
+    reset: PropTypes.func.isRequired,
+    submitting: PropTypes.bool.isRequired,
+    heading: PropTypes.string.isRequired,
+    authors: PropTypes.array.isRequired,    
+    handleSave: PropTypes.func.isRequired,
+    handleCancel: PropTypes.func.isRequired
+};
+
+
+
+export default reduxForm({
+    form: 'CourseForm',
+    validate
+})(CourseForm);

@@ -1,13 +1,13 @@
 import React from 'react';
 import {expect} from 'chai';
 import {shallow} from 'enzyme';
-import TextInput from '../../../src/components/common/TextInput';
+import FieldInput from '../../../src/components/common/FieldInput';
 
 
-describe('TextInput.test.js', () => {
+describe('FieldInput.test.js', () => {
     it('renders', () => {
         const props = { name: 'Category', label: 'Category', onChange: () => {} };
-        const wrapper = shallow(<TextInput {...props}/>);
+        const wrapper = shallow(<FieldInput {...props}/>);
        
         expect(wrapper.length).to.equal(1);
     });    

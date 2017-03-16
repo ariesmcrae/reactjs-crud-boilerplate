@@ -11,7 +11,7 @@ describe('CourseAction.test.js', () => {
 
     describe('getCoursesResponseActionCreator', () => {
         it(`should create action ${ActionType.GET_COURSES_RESPONSE}`, () => {
-            const courses = { title: 'Learn reactjs redux' };
+            const courses = [{ title: 'Learn reactjs redux' }];
             const expectedAction = {
                 type: ActionType.GET_COURSES_RESPONSE,
                 courses: courses
@@ -157,6 +157,57 @@ describe('CourseAction.test.js', () => {
 
     });    
 
+
+
+
+    describe('getCourseResponseActionCreator', () => {
+        it(`should create action ${ActionType.GET_COURSE_RESPONSE}`, () => {
+            const course = { title: 'Learn reactjs redux' };
+            const expectedAction = {
+                type: ActionType.GET_COURSE_RESPONSE,
+                course: course
+            };
+
+            const actualAction = CourseActions.getCourseResponse(course);
+
+            expect(actualAction).to.deep.equal(expectedAction);
+        });
+    });
+
+
+
+    describe('getCourseActionThunk', () => {
+        afterEach(() => {
+            nock.cleanAll();
+        });
+
+        it('should get a specific courses', (done) => {
+            const findThisCourse = { id: 1, title: 'Java Clean Code' };
+
+            const expectedActions = [
+                { 
+                    type: ActionType.API_CALL_BEGIN 
+                },
+                {
+                    type: ActionType.GET_COURSE_RESPONSE,
+                    body: {
+                        course: findThisCourse
+                    }
+                }
+            ];
+
+            const store = mockStore({ course: {} }, expectedActions, done);
+            store.dispatch(CourseActions.getCourseAction(1))
+                .then(() => {
+                    const actions = store.getActions();
+
+                    expect(actions[0].type).to.equal(ActionType.API_CALL_BEGIN);
+                    expect(actions[1].type).to.equal(ActionType.GET_COURSE_RESPONSE);
+                    done();
+                });
+        });
+
+    });    
 
 });
 

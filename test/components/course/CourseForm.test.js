@@ -9,6 +9,7 @@ function setup(heading) {
     const props = {
         handleSubmit: () => {},
         pristine: true,
+        reset: () => {},
         submitting: false,
         heading: heading,
         authors: [],

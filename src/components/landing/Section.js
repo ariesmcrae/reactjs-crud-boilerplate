@@ -54,7 +54,7 @@ const Section = () => {
                     </a>
                     <div className="card-block">
                         <h3 className="card-title">Bootstrap 4</h3>
-                        <p>A framework styling apps for all screen sizes.</p>
+                        <p>A framework for styling apps for all screen sizes.</p>
                     </div>
                 </div>
             </div>

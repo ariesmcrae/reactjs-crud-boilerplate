@@ -52,9 +52,7 @@ export function saveCourseAction(courseBeingAddedOrEdited) {
         //if authorId doesn't exist, it must therefore be new course that is being added, therefore add it
         return CourseApi.saveCourse(courseBeingAddedOrEdited)
             .then(savedCourse => {
-                courseBeingAddedOrEdited.id ? 
-                    dispatch(updateExistingCourseResponse(savedCourse))
-                    : dispatch(addNewCourseResponse(savedCourse));
+                courseBeingAddedOrEdited.id ? dispatch(updateExistingCourseResponse(savedCourse)) : dispatch(addNewCourseResponse(savedCourse)); //eslint-disable-line no-unused-expressions
             }).catch(error => {
                 dispatch(ApiCallErrorAction());
                 throw(error);

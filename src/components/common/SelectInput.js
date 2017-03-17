@@ -4,11 +4,11 @@ export default function SelectInput({input, name, label, defaultOption, options,
 
     return(
         <div className="form-group">
-            <div htmlFor={'authorId'}>{label}</div>
+            <div htmlFor={name}>{label}</div>
             <div className="field">
                 <select
                     {...input}
-                    name={'authorId'}
+                    name={name}
                     className="form-control"
                 >
                     <option>{defaultOption}</option>

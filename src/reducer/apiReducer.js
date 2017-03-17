@@ -5,13 +5,13 @@ import initialState from './initialState';
 
 
 export default function apiReducer(state = initialState.apiReducer, action) {
-    if (action.type == ActionType.API_CALL_BEGIN) {
+    if (action.type === ActionType.API_CALL_BEGIN) {
         return {
             ...state, apiCallsInProgress: state.apiCallsInProgress + 1
         };
 
 
-    } else if (isApiCallFinished(action.type) || action.type == ActionType.API_CALL_ERROR) {
+    } else if (isApiCallFinished(action.type) || action.type === ActionType.API_CALL_ERROR) {
         return {
             ...state, apiCallsInProgress: state.apiCallsInProgress -1
         };

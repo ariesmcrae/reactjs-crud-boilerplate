@@ -1,12 +1,11 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {Field, reduxForm} from 'redux-form';
 import {bindActionCreators} from 'redux';
 import toastr from 'toastr';
 import * as courseAction from '../../action/CourseAction';
 import * as authorAction from '../../action/AuthorAction';
-import CourseForm from './CourseForm';
-import {authorsFormattedForDropdown} from '../../selectors/selectors';
+import CourseForm from './CourseForm'; // eslint-disable-line import/no-named-as-default
+import {authorsFormattedForDropdown} from '../../selectors/selectors'; // eslint-disable-line import/no-named-as-default
 
 
 export class AddOrEditCourseContainer extends React.Component {

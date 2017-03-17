@@ -5,7 +5,7 @@ extends:
     - plugin:import/errors
     - plugin:import/warnings
 
-plugins: [ react ]
+plugins: [ react, jsx-a11y ]
 
 
 parserOptions: 
@@ -30,7 +30,7 @@ rules:
     semi: [1, "always"]
     no-trailing-spaces: 0
     eol-last: 0
-    no-unused-vars: 0
+    no-unused-vars: 1
     no-underscore-dangle: 0
     no-alert: 0
     no-lone-blocks: 0
@@ -52,6 +52,7 @@ rules:
     react/jsx-sort-props: 0
     react/jsx-uses-react: 1
     react/jsx-uses-vars: 1
+    jsx-a11y/img-has-alt: 1
     react/no-danger: 1
     react/no-did-mount-set-state: 1
     react/no-did-update-set-state: 1
@@ -66,3 +67,6 @@ rules:
     react/self-closing-comp: 1
     react/sort-comp: 1
     react/jsx-wrap-multilines: 1
+    eqeqeq: 1
+    array-callback-return: 1
+    no-unused-expressions: 1

@@ -57,7 +57,7 @@ const generateId = (course) => {
 
 class CourseApi {
     static getAllCourses() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(Object.assign([], courses));
             }, delay);
@@ -75,7 +75,7 @@ class CourseApi {
                 }
 
                 if (course.id) {
-                    const existingCourseIndex = courses.findIndex(a => a.id == course.id);
+                    const existingCourseIndex = courses.findIndex(a => a.id === course.id);
                     courses.splice(existingCourseIndex, 1, course);
                 } else {
                     //Just simulating creation here.
@@ -92,11 +92,9 @@ class CourseApi {
     }
 
     static deleteCourse(courseId) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() => {
-                const indexOfCourseToDelete = courses.findIndex(course => {
-                    course.id == courseId;
-                });
+                const indexOfCourseToDelete = courses.findIndex(course => course.id === courseId);
                 courses.splice(indexOfCourseToDelete, 1);
                 resolve();
             }, delay);
@@ -105,7 +103,7 @@ class CourseApi {
 
 
     static getCourse(courseId) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() => {
                 const existingCourseIndex = courses.findIndex(course => course.id === courseId);
                 

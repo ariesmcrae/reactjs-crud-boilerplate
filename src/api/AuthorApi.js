@@ -28,7 +28,7 @@ const generateId = (author) => {
 
 class AuthorApi {
   static getAllAuthors() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve(Object.assign([], authors));
       }, delay);
@@ -50,7 +50,7 @@ class AuthorApi {
         }
 
         if (author.id) {
-          const existingAuthorIndex = authors.findIndex(a => a.id == author.id);
+          const existingAuthorIndex = authors.findIndex(a => a.id === author.id);
           authors.splice(existingAuthorIndex, 1, author);
         } else {
           //Just simulating creation here.
@@ -66,11 +66,9 @@ class AuthorApi {
   }
 
   static deleteAuthor(authorId) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
-        const indexOfAuthorToDelete = authors.findIndex(author => {
-          author.id == authorId;
-        });
+        const indexOfAuthorToDelete = authors.findIndex(author => author.id === authorId);
         authors.splice(indexOfAuthorToDelete, 1);
         resolve();
       }, delay);

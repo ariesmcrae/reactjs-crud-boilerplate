@@ -13,7 +13,7 @@ const Section = () => {
             <div className="col-md-6 col-lg-3">
                 <div className="card">
                     <a href="https://facebook.github.io/react" target="_blank">
-                        <img src={reactjs} className="card-img-top img-fluid" />
+                        <img src={reactjs} className="card-img-top img-fluid" alt="ReactJS"/>
                     </a>
                     <div className="card-block">
                         <h3 className="card-title">ReactJS</h3>
@@ -26,7 +26,7 @@ const Section = () => {
             <div className="col-md-6 col-lg-3">
                 <div className="card">
                     <a href="https://webpack.js.org" target="_blank">
-                        <img src={webpack2} className="card-img-top img-fluid" />
+                        <img src={webpack2} className="card-img-top img-fluid" alt="Webpack 2"/>
                     </a>
                     <div className="card-block">
                         <h3 className="card-title">Webpack 2</h3>
@@ -38,10 +38,10 @@ const Section = () => {
             <div className="col-md-6 col-lg-3">
                 <div className="card">
                     <a href="https://reacttraining.com/react-router" target="_blank">
-                        <img src={reactrouter4} className="card-img-top img-fluid" />
+                        <img src={reactrouter4} className="card-img-top img-fluid" alt="React Router 4"/>
                     </a>
                     <div className="card-block">
-                        <h3 className="card-title">React-Router 4</h3>
+                        <h3 className="card-title">React Router 4</h3>
                         <p>Declarative routing for ReactJS apps.</p>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ const Section = () => {
             <div className="col-md-6 col-lg-3">
                 <div className="card">
                     <a href="http://v4-alpha.getbootstrap.com" target="_blank">
-                    <img src={bootstrap4} className="card-img-top img-fluid" />
+                    <img src={bootstrap4} className="card-img-top img-fluid" alt="Bootstrap 4" />
                     </a>
                     <div className="card-block">
                         <h3 className="card-title">Bootstrap 4</h3>

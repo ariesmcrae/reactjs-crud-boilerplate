@@ -1,9 +1,9 @@
 {
-  "name": "reactjs-crud-starterkit",
-  "description": "ReactJS CRUD Starter Kit",
+  "name": "reactjs-crud-boilerplate",
+  "description": "ReactJS CRUD Boilerplate",
   "version": "0.0.2",
-  "main": "index.js",
-  "repository": "https://github.com/ariesmcrae/reactjs-crud-starter-kit.git",
+  "private": false,
+  "repository": "https://github.com/ariesmcrae/reactjs-crud-boilerplate.git",
   "author": "Aries McRae <github@ariesmcrae.com>",
   "license": "MIT",
   "keywords": [
@@ -12,20 +12,6 @@
     "Starter Project",
     "Seed"
   ],
-  "scripts": {
-    "prestart": "babel-node scripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check lint:watch test:watch startServerDev",
-    "startServerDev": "babel-node ./scripts/serverDev.js",
-    "security-check": "nsp check",
-    "lint": "esw webpack.config.* src scripts --color",
-    "lint:watch": "yarn lint -- --watch",
-    "test": "mocha --reporter spec --compilers scripts/testSetup.js --recursive test",
-    "test:watch": "yarn test -- --watch",
-    "clean-dist": "node_modules/.bin/rimraf dist && mkdir dist",
-    "prebuild": "npm-run-all clean-dist test lint",
-    "build": "babel-node scripts/build.js",
-    "postbuild": "babel-node scripts/serverProd.js"
-  },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
@@ -42,43 +28,12 @@
     "toastr": "^2.1.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.4.1",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-latest": "^6.24.0",
-    "babel-preset-react": "^6.23.0",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-register": "^6.24.0",
-    "chai": "^3.5.0",
-    "chalk": "^1.1.3",
-    "compression": "^1.6.2",
-    "css-loader": "^0.27.3",
-    "enzyme": "^2.7.1",
-    "eslint": "^3.15.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0",
-    "eslint-watch": "^3.0.0",
-    "express": "^4.14.1",
-    "extract-text-webpack-plugin": "^2.0.0",
-    "file-loader": "^0.10.0",
-    "html-webpack-plugin": "^2.28.0",
-    "jsdom": "^9.12.0",
-    "mocha": "^3.2.0",
-    "nock": "^9.0.9",
-    "npm-run-all": "^4.0.1",
-    "nsp": "^2.6.2",
-    "open": "^0.0.5",
-    "react-addons-test-utils": "^15.4.2",
-    "redux-mock-store": "^1.2.2",
-    "rimraf": "^2.5.4",
-    "style-loader": "^0.14.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^2.2.1",
-    "webpack-dev-middleware": "^1.10.0",
-    "webpack-hot-middleware": "^2.16.1",
-    "webpack-md5-hash": "^0.0.5"
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

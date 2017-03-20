@@ -10,7 +10,7 @@ export default {
     },
 
     selectedCourseReducer: {
-        course: null
+        course: undefined
     },
 
     apiReducer: {

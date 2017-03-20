@@ -15,7 +15,7 @@ beforeAll(() => {
         label: 'Category',
         placeholder: 'Category',
         meta: { touched: false, error: {}, warning: {} },
-        onChange: () => { }
+        onChange: jest.fn()
     };
 
     return props;

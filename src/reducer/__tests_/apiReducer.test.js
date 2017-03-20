@@ -1,7 +1,7 @@
-import apiReducer from '../../src/reducer/apiReducer';
-import * as ActionType from '../../src/action/ActionType';
-import * as ApiAction from '../../src/action/ApiAction';
-import * as CourseAction from '../../src/action/CourseAction';
+import apiReducer from '../apiReducer';
+import * as ActionType from '../../action/ActionType';
+import * as ApiAction from '../../action/ApiAction';
+import * as CourseAction from '../../action/CourseAction';
 
 
 

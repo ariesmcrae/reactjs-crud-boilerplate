@@ -1,8 +1,8 @@
 import thunk from 'redux-thunk';
 import nock from 'nock';
 import configureMockStore from 'redux-mock-store';
-import * as CourseActions from '../../src/action/CourseAction';
-import * as ActionType from '../../src/action/ActionType';
+import * as CourseActions from '../CourseAction';
+import * as ActionType from '../ActionType';
 
 
 

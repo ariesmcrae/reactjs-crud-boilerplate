@@ -1,5 +1,5 @@
-import * as ApiActions from '../../src/action/ApiAction';
-import * as ActionType from '../../src/action/ActionType';
+import * as ApiActions from '../ApiAction';
+import * as ActionType from '../ActionType';
 
 
 

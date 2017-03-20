@@ -1,5 +1,5 @@
-import * as AuthorActions from '../../src/action/AuthorAction';
-import * as ActionType from '../../src/action/ActionType';
+import * as AuthorActions from '../AuthorAction';
+import * as ActionType from '../ActionType';
 import thunk from 'redux-thunk';
 import nock from 'nock';
 import configureMockStore from 'redux-mock-store';

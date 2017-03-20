@@ -59,7 +59,7 @@
     "eslint": "^3.18.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0",
+    "eslint-plugin-react": "^6.10.2",
     "eslint-watch": "^3.0.0",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0",

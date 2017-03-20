@@ -9,7 +9,7 @@ import configureMockStore from 'redux-mock-store';
 
 describe('AuthorAction.test.js', () => {
 
-    describe('getAuthorsResponseActionCreator', () => {
+    describe('getAuthorsResponseAction Creator', () => {
         it(`should create action ${ActionType.GET_AUTHORS_RESPONSE}`, () => {
             const authors = { id: 'scott-allen', firstName: 'Scott', lastName: 'Allen' };
             const expectedAction = {
@@ -28,7 +28,7 @@ describe('AuthorAction.test.js', () => {
     const mockStore = configureMockStore(thunkMiddleware);
 
 
-    describe('getCoursesActionThunk', () => {
+    describe('getCoursesAction Thunk', () => {
         afterEach(() => {
             nock.cleanAll();
         });

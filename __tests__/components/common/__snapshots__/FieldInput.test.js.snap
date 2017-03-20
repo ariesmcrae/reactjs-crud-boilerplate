@@ -1,0 +1,17 @@
+exports[`FieldInput.test.js renders as expected 1`] = `
+<div
+  className="form-group">
+  <label
+    htmlFor="category">
+    Category
+  </label>
+  <div
+    className="field">
+    <input
+      className="form-control"
+      name="category"
+      placeholder="Category"
+      type="text" />
+  </div>
+</div>
+`;

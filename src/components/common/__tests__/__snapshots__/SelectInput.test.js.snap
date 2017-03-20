@@ -1,0 +1,21 @@
+exports[`SelectInput.test.js renders as expected 1`] = `
+<div
+  className="form-group">
+  <div
+    htmlFor="category">
+    Category
+  </div>
+  <div
+    className="field">
+    <select
+      className="form-control"
+      name="category">
+      <option />
+      <option
+        value="Josh">
+        Bloch
+      </option>
+    </select>
+  </div>
+</div>
+`;

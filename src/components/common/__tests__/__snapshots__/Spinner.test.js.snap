@@ -1,0 +1,7 @@
+exports[`Spinner.test.js renders as expected 1`] = `
+<h3
+  className="bg-info text-white font-weight-bold">
+  .
+   
+</h3>
+`;

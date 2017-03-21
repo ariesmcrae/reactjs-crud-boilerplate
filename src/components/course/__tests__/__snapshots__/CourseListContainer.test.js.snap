@@ -1,0 +1,22 @@
+exports[`CourseListContainer.test.js renders without crashing 1`] = `
+<div
+  className="container">
+  <h1>
+    Courses
+  </h1>
+  <button
+    className="btn btn-primary my-5"
+    onClick={[Function]}
+    type="button">
+    Add
+  </button>
+  <CourseList
+    courses={
+      Array [
+        Object {
+          "title": "Java The Good Pards",
+        },
+      ]
+    } />
+</div>
+`;

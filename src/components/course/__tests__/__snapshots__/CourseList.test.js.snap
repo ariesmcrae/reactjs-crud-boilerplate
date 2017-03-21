@@ -1,0 +1,40 @@
+exports[`CourseList.test.js renders without crashing 1`] = `
+<table
+  className="table table-striped table-responsive">
+  <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Author
+      </th>
+      <th>
+        Category
+      </th>
+      <th>
+        Length
+      </th>
+      <th>
+         
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <CourseListRow
+      course={
+        Object {
+          "id": 1,
+          "title": "Java Clean Code",
+        }
+      } />
+    <CourseListRow
+      course={
+        Object {
+          "id": 2,
+          "title": "Java The Good Pards",
+        }
+      } />
+  </tbody>
+</table>
+`;

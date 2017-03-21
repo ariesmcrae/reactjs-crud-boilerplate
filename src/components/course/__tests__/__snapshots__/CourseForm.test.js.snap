@@ -1,0 +1,54 @@
+exports[`CourseForm.test.js renders without crashing 1`] = `
+<form>
+  <h1>
+    Add
+  </h1>
+  <Field
+    component={[Function]}
+    label="Title"
+    name="title"
+    placeholder="Title of the course"
+    type="text" />
+  <Field
+    component={[Function]}
+    label="Author"
+    name="authorId"
+    options={Array []} />
+  <Field
+    component={[Function]}
+    label="Category"
+    name="category"
+    placeholder="Category of the course"
+    type="text" />
+  <Field
+    component={[Function]}
+    label="Length"
+    name="length"
+    placeholder="Lenght of course in minutes or hours"
+    type="text" />
+  <div>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      type="submit">
+      <i
+        aria-hidden="true"
+        className="fa fa-paper-plane-o" />
+       Submit
+    </button>
+    <button
+      className="btn btn-default btn-space"
+      disabled={true}
+      onClick={[Function]}
+      type="button">
+      Clear Values
+    </button>
+    <button
+      className="btn btn-default btn-space"
+      onClick={[Function]}
+      type="button">
+      Cancel
+    </button>
+  </div>
+</form>
+`;

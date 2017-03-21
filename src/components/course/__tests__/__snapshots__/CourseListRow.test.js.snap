@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CourseListRow.test.js renders without crashing 1`] = `
+<tr>
+  <td>
+    <a
+      target="_blank"
+    >
+      Java Clean Code
+    </a>
+  </td>
+  <td />
+  <td />
+  <td />
+  <td>
+    <Link
+      replace={false}
+      to="/course/1"
+    >
+      <i
+        aria-hidden="true"
+        className="fa fa-pencil"
+      />
+    </Link>
+  </td>
+</tr>
+`;

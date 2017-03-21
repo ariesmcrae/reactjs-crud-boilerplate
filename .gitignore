@@ -7,3 +7,5 @@ src/api/db.json
 
 dist/
 build/
+
+coverage/

@@ -13,7 +13,7 @@
 * Babel
 * Webpack 1.x
 * ESLint, eslint-watch
-* Test Framework: Mocha
+* Test Framework: Jest
 * Test Assertion: Chai
 * Test Helper Library: Enzyme, JSDOM
 * Test Headless DOM: JSDOM - in memory DOM where tests are executed.

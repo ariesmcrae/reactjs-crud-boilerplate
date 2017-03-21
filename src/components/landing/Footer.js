@@ -36,7 +36,7 @@ const Footer = () => {
 
                 <div className="tab-pane" id="unittests">
                     <h3>Unit Tests</h3>
-                    <p>Mocha, Chai, Enzyme</p>
+                    <p>Jest, Enzyme</p>
                 </div>
             </div>
         </footer>

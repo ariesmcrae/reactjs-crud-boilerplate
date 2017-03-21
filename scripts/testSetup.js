@@ -12,11 +12,6 @@ process.env.NODE_ENV = 'test';
 // Register babel so that it will transpile ES6 to ES5 before our tests run.
 require('babel-register')();
 
-// Disable Webpack features that Mocha doesn't understand.
-// If Mocha sees this, then just treat it as an empty function.
-require.extensions['.css'] = function() {};
-require.extensions['.png'] = function() {};
-require.extensions['.jpg'] = function() {};
 
 // Configure JSDOM and set global variables to simulate a browser environment for tests.
 var jsdom = require('jsdom').jsdom;

@@ -1,4 +1,4 @@
-exports[`Footer.test.js renders 1`] = `
+exports[`Footer.test.js renders without crashing 1`] = `
 <footer>
   <h2
     className="display-4 text-center py-5 my-4">

@@ -1,0 +1,10 @@
+exports[`Home.test.js renders without crashing 1`] = `
+<div>
+  <Header />
+  <div
+    className="container text-muted">
+    <Section />
+    <Footer />
+  </div>
+</div>
+`;

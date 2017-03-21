@@ -21,7 +21,7 @@ export class HeaderNavContainer extends React.Component {
                             <NavLink className="nav-item nav-link" activeClassName="active" to="/about">About</NavLink>
 
                             <span className="ml-5">
-                                {this.props.apiCallsInProgress && <Spinner className="nav-item nav-link" interval={100} dots={20} />}
+                                {this.props.apiCallsInProgress > 0 && <Spinner className="nav-item nav-link" interval={100} dots={20} />}
                             </span>
                         </div>
                     </div>
@@ -34,14 +34,14 @@ export class HeaderNavContainer extends React.Component {
 
 
 HeaderNavContainer.propTypes = {
-    apiCallsInProgress: PropTypes.bool.isRequired
+    apiCallsInProgress: PropTypes.number.isRequired
 };
 
 
 
 function mapStateToProps(state) {
     return {
-        apiCallsInProgress: state.apiReducer.apiCallsInProgress > 0
+        apiCallsInProgress: state.apiReducer.apiCallsInProgress
     };
 }
 

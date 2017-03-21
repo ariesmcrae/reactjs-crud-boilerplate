@@ -8,7 +8,7 @@ describe('authorReducer.test.js', ()  => {
 
     it('has a default state', () => {
         const initialState = undefined;
-        const action = { type: 'blah blah' }
+        const action = { type: 'blah blah' };
 
         const newState = authorReducer(initialState, action);
 

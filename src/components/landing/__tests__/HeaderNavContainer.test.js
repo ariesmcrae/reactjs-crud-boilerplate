@@ -7,7 +7,7 @@ import {HeaderNavContainer} from '../HeaderNavContainer';
 describe('HeaderNavContainer.test.js', () => {
 
     it('renders without crashing', () => {
-        const props = { apiCallsInProgress: 0 }
+        const props = { apiCallsInProgress: 0 };
         const wrapper = shallow(<HeaderNavContainer {...props}/>);
 
         expect(wrapper).toHaveLength(1);

@@ -41,7 +41,7 @@ HeaderNavContainer.propTypes = {
 
 function mapStateToProps(state) {
     return {
-        apiCallsInProgress: state.apiReducer.apiCallsInProgress > 0
+        apiCallsInProgress: state.apiReducer.apiCallsInProgress
     };
 }
 

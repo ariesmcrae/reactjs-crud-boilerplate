@@ -1,5 +1,5 @@
 {
-  "name": "reactjs-crud-starterkit",
+  "name": "reactjs-crud-boilerplate",
   "description": "ReactJS CRUD Starter Kit",
   "version": "0.0.2",
   "main": "index.js",
@@ -77,7 +77,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.15.0",
     "url-loader": "^0.5.7",
-    "webpack": "^2.2.1",
+    "webpack": "^2.3.0",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-md5-hash": "^0.0.5"

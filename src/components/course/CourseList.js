@@ -3,7 +3,7 @@ import CourseListRow from './CourseListRow';
 
 export default function CourseList({courses, handleDelete}) {
     return(
-        <table className="table table-striped table-responsive">
+        <table className="table table-striped">
             <thead>
                 <tr>
                     <th>Title</th>

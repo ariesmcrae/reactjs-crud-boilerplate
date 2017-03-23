@@ -1,6 +1,6 @@
 exports[`CourseList.test.js renders without crashing 1`] = `
 <table
-  className="table table-striped table-responsive">
+  className="table table-striped">
   <thead>
     <tr>
       <th>

@@ -75,9 +75,9 @@
     "react-addons-test-utils": "^15.4.2",
     "redux-mock-store": "^1.2.2",
     "rimraf": "^2.5.4",
-    "style-loader": "^0.15.0",
+    "style-loader": "^0.16.0",
     "url-loader": "^0.5.7",
-    "webpack": "^2.3.0",
+    "webpack": "^2.3.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-md5-hash": "^0.0.5"

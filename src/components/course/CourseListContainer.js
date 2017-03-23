@@ -12,6 +12,7 @@ export class CourseListContainer extends React.Component {
     constructor() {
         super();
         this.handleAddCourse = this.handleAddCourse.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);        
     }
 
 
@@ -23,9 +24,19 @@ export class CourseListContainer extends React.Component {
     }
 
     
+
     handleAddCourse() {
         this.props.history.push('/course');
     }
+
+
+    handleDelete(event) {
+        this.props.action.deleteCourseAction(event.target.getAttribute('value'))
+            .catch(error => {
+                toastr.error(error);
+            });
+    }
+
 
 
     render() {
@@ -48,7 +59,7 @@ export class CourseListContainer extends React.Component {
                     Add
                 </button>
                 
-                <CourseList courses={courses}/>
+                <CourseList courses={courses} handleDelete={this.handleDelete}/>
             </div>            
         );
     }

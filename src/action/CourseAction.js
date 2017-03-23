@@ -27,18 +27,16 @@ export function getCoursesAction() {
 
 
 
-export function addNewCourseResponse(course) {
+export function addNewCourseResponse() {
     return {
-        type: ActionType.ADD_NEW_COURSE_RESPONSE,
-        course
+        type: ActionType.ADD_NEW_COURSE_RESPONSE
     };
 }
 
 
-export function updateExistingCourseResponse(course) {
+export function updateExistingCourseResponse() {
     return {
-        type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE,
-        course
+        type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE
     };
 }
 
@@ -52,7 +50,13 @@ export function saveCourseAction(courseBeingAddedOrEdited) {
         //if authorId doesn't exist, it must therefore be new course that is being added, therefore add it
         return CourseApi.saveCourse(courseBeingAddedOrEdited)
             .then(savedCourse => {
-                courseBeingAddedOrEdited.id ? dispatch(updateExistingCourseResponse(savedCourse)) : dispatch(addNewCourseResponse(savedCourse)); //eslint-disable-line no-unused-expressions
+                if (courseBeingAddedOrEdited.id) {
+                    dispatch(updateExistingCourseResponse());
+                } else {
+                    dispatch(addNewCourseResponse());
+                }
+            }).then(() => {
+                 dispatch(getCoursesAction());
             }).catch(error => {
                 dispatch(ApiCallErrorAction());
                 throw(error);
@@ -85,3 +89,28 @@ export function getCourseAction(courseId) {
     };
 }
 
+
+
+export function deleteCourseResponse() {
+    return {
+        type: ActionType.DELETE_COURSE_RESPONSE
+    };
+}
+
+
+
+export function deleteCourseAction(courseId) {
+    return(dispatch) => {
+        
+        dispatch(ApiCallBeginAction());
+
+        return CourseApi.deleteCourse(courseId)
+            .then(course => {
+                dispatch(deleteCourseResponse());
+            }).then(() => {
+                dispatch(getCoursesAction());
+            }).catch(error => {
+                throw error;
+            });
+    };
+}

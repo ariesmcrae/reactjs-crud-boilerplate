@@ -21,6 +21,9 @@ exports[`CourseList.test.js renders without crashing 1`] = `
       <th>
          
       </th>
+      <th>
+         
+      </th>
     </tr>
   </thead>
   <tbody>

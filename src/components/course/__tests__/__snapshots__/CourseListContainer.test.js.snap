@@ -22,6 +22,7 @@ exports[`CourseListContainer.test.js renders without crashing 1`] = `
         },
       ]
     }
+    handleDelete={[Function]}
   />
 </div>
 `;

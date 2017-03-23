@@ -21,6 +21,7 @@
     "lint:watch": "yarn lint -- --watch",
     "test": "jest",
     "test:watch": "yarn test -- --watch",
+    "coverage" : "jest --coverage --watch",
     "clean-dist": "node_modules/.bin/rimraf dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node scripts/build.js",

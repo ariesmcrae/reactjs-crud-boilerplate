@@ -83,7 +83,7 @@ exports[`Footer.test.js renders without crashing 1`] = `
         Unit Tests
       </h3>
       <p>
-        Mocha, Chai, Enzyme
+        Jest, Enzyme
       </p>
     </div>
   </div>

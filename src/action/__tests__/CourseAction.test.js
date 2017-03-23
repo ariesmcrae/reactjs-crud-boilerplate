@@ -27,8 +27,7 @@ describe('CourseAction.test.js', () => {
         it(`should create action ${ActionType.ADD_NEW_COURSE_RESPONSE}`, () => {
             const course = { title: 'Learn reactjs redux' };
             const expectedAction = {
-                type: ActionType.ADD_NEW_COURSE_RESPONSE,
-                course: course
+                type: ActionType.ADD_NEW_COURSE_RESPONSE
             };
 
             const actualAction = CourseActions.addNewCourseResponse(course);
@@ -42,8 +41,7 @@ describe('CourseAction.test.js', () => {
         it(`should create action ${ActionType.UPDATE_EXISTING_COURSE_RESPONSE}`, () => {
             const course = { title: 'Learn reactjs redux' };
             const expectedAction = {
-                type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE,
-                course: course
+                type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE
             };
 
             const actualAction = CourseActions.updateExistingCourseResponse(course);
@@ -66,6 +64,21 @@ describe('CourseAction.test.js', () => {
             expect(actualAction).toEqual(expectedAction);
         });
     });
+
+
+
+    describe('deleteCourseResponseAction Creator', () => {
+        it(`should create action ${ActionType.DELETE_COURSE_RESPONSE}`, () => {
+            const expectedAction = {
+                type: ActionType.DELETE_COURSE_RESPONSE
+            };
+
+            const actualAction = CourseActions.deleteCourseResponse();
+
+            expect(actualAction).toEqual(expectedAction);
+        });
+    });
+
 
 
     const thunkMiddleware = [thunk];
@@ -113,14 +126,7 @@ describe('CourseAction.test.js', () => {
         it('should update existing course', (done) => {
             const expectedActions = [
                 { type: ActionType.API_CALL_BEGIN },
-                {
-                    type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE,
-                    body: {
-                        course: [
-                            { id: 1, title: 'Java Clean Code' }
-                        ]
-                    }
-                }
+                { type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE}
             ];
 
             const store = mockStore({ course: [] }, expectedActions, done);
@@ -139,14 +145,7 @@ describe('CourseAction.test.js', () => {
         it('should add a new course', (done) => {
             const expectedActions = [
                 { type: ActionType.API_CALL_BEGIN },
-                {
-                    type: ActionType.ADD_NEW_COURSE_RESPONSE,
-                    body: {
-                        course: [
-                            { title: 'Java Clean Code' }
-                        ]
-                    }
-                }
+                { type: ActionType.ADD_NEW_COURSE_RESPONSE}
             ];
 
             const store = mockStore({ course: [] }, expectedActions, done);
@@ -174,9 +173,7 @@ describe('CourseAction.test.js', () => {
             const findThisCourse = { id: 1, title: 'Java Clean Code' };
 
             const expectedActions = [
-                { 
-                    type: ActionType.API_CALL_BEGIN 
-                },
+                { type: ActionType.API_CALL_BEGIN },
                 {
                     type: ActionType.GET_COURSE_RESPONSE,
                     body: {
@@ -195,8 +192,35 @@ describe('CourseAction.test.js', () => {
                     done();
                 });
         });
-
     });    
+
+
+
+    describe('deleteCourseAction Thunk', () => {
+        afterEach(() => {
+            nock.cleanAll();
+        });
+
+        it('should delete a specific course', (done) => {
+            const expectedActions = [
+                { type: ActionType.API_CALL_BEGIN },
+                {
+                    type: ActionType.DELETE_COURSE_RESPONSE
+                }
+            ];
+
+            const store = mockStore({ course: {} }, expectedActions, done);
+            store.dispatch(CourseActions.deleteCourseAction(1))
+                .then(() => {
+                    const actions = store.getActions();
+
+                    expect(actions[0].type).toEqual(ActionType.API_CALL_BEGIN);
+                    expect(actions[1].type).toEqual(ActionType.DELETE_COURSE_RESPONSE);
+                    done();
+                });
+        });
+    });    
+
 
 
 });

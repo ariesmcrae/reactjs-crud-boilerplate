@@ -18,5 +18,16 @@ exports[`CourseListRow.test.js renders without crashing 1`] = `
         className="fa fa-pencil" />
     </Link>
   </td>
+  <td>
+    <i
+      aria-hidden="true"
+      className="fa fa-trash-o"
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+      value={1} />
+  </td>
 </tr>
 `;

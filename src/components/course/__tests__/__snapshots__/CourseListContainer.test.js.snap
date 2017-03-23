@@ -17,6 +17,7 @@ exports[`CourseListContainer.test.js renders without crashing 1`] = `
           "title": "Java The Good Pards",
         },
       ]
-    } />
+    }
+    handleDelete={[Function]} />
 </div>
 `;

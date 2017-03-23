@@ -8,7 +8,8 @@ describe('CourseListRow.test.js', () => {
 
     it('renders without crashing', () => {
         const props = {
-            course: { id: 1, title: 'Java Clean Code' }
+            course: { id: 1, title: 'Java Clean Code' },
+            handleDelete: jest.fn()
         };
         
         const wrapper = shallow(<CourseListRow {...props}/>);

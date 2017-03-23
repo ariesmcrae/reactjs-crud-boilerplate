@@ -25,5 +25,6 @@ export default function CourseList({courses, handleDelete}) {
 }
 
 CourseList.propTypes = {
-    courses: PropTypes.array.isRequired
+    courses: PropTypes.array.isRequired,
+    handleDelete: PropTypes.func.isRequired
 };

@@ -49,7 +49,7 @@ export function saveCourseAction(courseBeingAddedOrEdited) {
         //if authorId exists, it means that the course is being edited, therefore update it.
         //if authorId doesn't exist, it must therefore be new course that is being added, therefore add it
         return CourseApi.saveCourse(courseBeingAddedOrEdited)
-            .then(savedCourse => {
+            .then(() => {
                 if (courseBeingAddedOrEdited.id) {
                     dispatch(updateExistingCourseResponse());
                 } else {
@@ -105,7 +105,7 @@ export function deleteCourseAction(courseId) {
         dispatch(ApiCallBeginAction());
 
         return CourseApi.deleteCourse(courseId)
-            .then(course => {
+            .then(() => {
                 dispatch(deleteCourseResponse());
             }).then(() => {
                 dispatch(getCoursesAction());

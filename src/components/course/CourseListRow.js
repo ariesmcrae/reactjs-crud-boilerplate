@@ -25,5 +25,6 @@ export default function CourseListRow({course, handleDelete}) {
 
 
 CourseListRow.propTypes = {
-    course: PropTypes.object.isRequired
+    course: PropTypes.object.isRequired,
+    handleDelete: PropTypes.func.isRequired,
 };

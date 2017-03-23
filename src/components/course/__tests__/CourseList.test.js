@@ -11,7 +11,8 @@ describe('CourseList.test.js', () => {
             courses: [
                 { id: 1, title: 'Java Clean Code' },
                 { id: 2, title: 'Java The Good Pards' },                
-            ]
+            ],
+            handleDelete: jest.fn()            
         };
         
         const wrapper = shallow(<CourseList {...props}/>);

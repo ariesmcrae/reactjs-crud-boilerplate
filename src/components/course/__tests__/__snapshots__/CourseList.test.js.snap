@@ -30,14 +30,16 @@ exports[`CourseList.test.js renders without crashing 1`] = `
           "id": 1,
           "title": "Java Clean Code",
         }
-      } />
+      }
+      handleDelete={[Function]} />
     <CourseListRow
       course={
         Object {
           "id": 2,
           "title": "Java The Good Pards",
         }
-      } />
+      }
+      handleDelete={[Function]} />
   </tbody>
 </table>
 `;

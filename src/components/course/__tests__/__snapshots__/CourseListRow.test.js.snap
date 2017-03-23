@@ -22,6 +22,7 @@ exports[`CourseListRow.test.js renders without crashing 1`] = `
     <i
       aria-hidden="true"
       className="fa fa-trash-o"
+      onClick={[Function]}
       style={
         Object {
           "cursor": "pointer",

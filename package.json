@@ -21,7 +21,7 @@
     "lint:watch": "yarn lint -- --watch",
     "test": "jest",
     "test:watch": "yarn test -- --watch",
-    "coverage" : "jest --coverage --watch",
+    "coverage": "jest --coverage --watch",
     "clean-dist": "node_modules/.bin/rimraf dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node scripts/build.js",
@@ -37,7 +37,7 @@
     "react-redux": "^5.0.2",
     "react-router-dom": "^4.0.0",
     "redux": "^3.6.0",
-    "redux-form": "^6.5.0",
+    "redux-form": "^6.6.0",
     "redux-thunk": "^2.2.0",
     "tether": "^1.4.0",
     "toastr": "^2.1.2"
@@ -45,7 +45,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
-    "babel-eslint": "^7.2.0",
+    "babel-eslint": "^7.2.1",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",

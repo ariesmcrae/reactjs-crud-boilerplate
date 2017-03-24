@@ -1,19 +1,19 @@
 import * as ActionType from './ActionType';
 import CourseApi from '../api/CourseApi';
-import {ApiCallBeginAction, ApiCallErrorAction} from './ApiAction';
+import { ApiCallBeginAction, ApiCallErrorAction } from './ApiAction';
 
-export function getCoursesResponse(courses) {
-    return {
-        type: ActionType.GET_COURSES_RESPONSE,
-        courses
-    };
-}
+
+
+export const getCoursesResponse = courses => ({
+    type: ActionType.GET_COURSES_RESPONSE,
+    courses
+});
 
 
 
 export function getCoursesAction() {
-    return(dispatch) => {
-        
+    return (dispatch) => {
+
         dispatch(ApiCallBeginAction());
 
         return CourseApi.getAllCourses()
@@ -27,22 +27,20 @@ export function getCoursesAction() {
 
 
 
-export function addNewCourseResponse() {
-    return {
-        type: ActionType.ADD_NEW_COURSE_RESPONSE
-    };
-}
+export const addNewCourseResponse = () => ({
+    type: ActionType.ADD_NEW_COURSE_RESPONSE
+});
 
 
-export function updateExistingCourseResponse() {
-    return {
-        type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE
-    };
-}
+
+export const updateExistingCourseResponse = () => ({
+    type: ActionType.UPDATE_EXISTING_COURSE_RESPONSE
+});
+
 
 
 export function saveCourseAction(courseBeingAddedOrEdited) {
-    return function(dispatch) {
+    return function (dispatch) {
 
         dispatch(ApiCallBeginAction());
 
@@ -56,28 +54,26 @@ export function saveCourseAction(courseBeingAddedOrEdited) {
                     dispatch(addNewCourseResponse());
                 }
             }).then(() => {
-                 dispatch(getCoursesAction());
+                dispatch(getCoursesAction());
             }).catch(error => {
                 dispatch(ApiCallErrorAction());
-                throw(error);
+                throw (error);
             });
     };
 }
 
 
 
-export function getCourseResponse(courseFound) {
-    return {
-        type: ActionType.GET_COURSE_RESPONSE,
-        course: courseFound 
-    };
-}
+export const getCourseResponse = courseFound => ({
+    type: ActionType.GET_COURSE_RESPONSE,
+    course: courseFound
+});
 
 
 
 export function getCourseAction(courseId) {
-    return(dispatch) => {
-        
+    return (dispatch) => {
+
         dispatch(ApiCallBeginAction());
 
         return CourseApi.getCourse(courseId)
@@ -91,17 +87,15 @@ export function getCourseAction(courseId) {
 
 
 
-export function deleteCourseResponse() {
-    return {
-        type: ActionType.DELETE_COURSE_RESPONSE
-    };
-}
+export const deleteCourseResponse = () => ({
+    type: ActionType.DELETE_COURSE_RESPONSE
+});
 
 
 
 export function deleteCourseAction(courseId) {
-    return(dispatch) => {
-        
+    return (dispatch) => {
+
         dispatch(ApiCallBeginAction());
 
         return CourseApi.deleteCourse(courseId)

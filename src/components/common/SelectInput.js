@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 
-export default function SelectInput({input, name, label, defaultOption, options, meta: {touched, error, warning}}) {
+
+const SelectInput = ({input, name, label, defaultOption, options, meta: {touched, error, warning}}) => {
 
     return(
         <div className="form-group">
@@ -24,7 +25,7 @@ export default function SelectInput({input, name, label, defaultOption, options,
             </div>
         </div>
     );
-}
+};
 
 
 
@@ -36,3 +37,6 @@ SelectInput.propTypes = {
     options: PropTypes.arrayOf(PropTypes.object),
     meta: PropTypes.object.isRequired
 };
+
+
+export default SelectInput;

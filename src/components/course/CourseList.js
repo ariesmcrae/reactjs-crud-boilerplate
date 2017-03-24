@@ -1,7 +1,9 @@
 import React, {PropTypes} from 'react';
 import CourseListRow from './CourseListRow';
 
-export default function CourseList({courses, handleDelete}) {
+
+const CourseList = ({courses, handleDelete}) => {
+
     return(
         <table className="table table-striped">
             <thead>
@@ -22,9 +24,15 @@ export default function CourseList({courses, handleDelete}) {
             </tbody>
         </table>
     );
-}
+};
+
+
 
 CourseList.propTypes = {
     courses: PropTypes.array.isRequired,
     handleDelete: PropTypes.func.isRequired
 };
+
+
+
+export default CourseList;

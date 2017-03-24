@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import toastr from 'toastr';
 import * as courseAction from '../../action/CourseAction';
 import CourseList from './CourseList';
@@ -12,7 +12,7 @@ export class CourseListContainer extends React.Component {
     constructor() {
         super();
         this.handleAddCourse = this.handleAddCourse.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);        
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
 
@@ -23,7 +23,7 @@ export class CourseListContainer extends React.Component {
             });
     }
 
-    
+
 
     handleAddCourse() {
         this.props.history.push('/course');
@@ -40,10 +40,10 @@ export class CourseListContainer extends React.Component {
 
 
     render() {
-        const {courses} = this.props;
+        const { courses } = this.props;
 
         if (!courses) {
-            return(
+            return (
                 <div>Loading...</div>
             );
         }
@@ -52,42 +52,38 @@ export class CourseListContainer extends React.Component {
             <div className="container">
                 <h1>Courses</h1>
 
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     className="btn btn-primary my-5"
                     onClick={this.handleAddCourse}>
                     Add
                 </button>
-                
-                <CourseList courses={courses} handleDelete={this.handleDelete}/>
-            </div>            
+
+                <CourseList courses={courses} handleDelete={this.handleDelete} />
+            </div>
         );
     }
 }
 
 
 
-
-function mapStateToProps(state) {
-    return {
-        courses: state.coursesReducer.courses
-    };
-}
+const mapStateToProps = state => ({
+    courses: state.coursesReducer.courses
+});
 
 
 
-function mapDispatchToProps(dispatch) {
-    return {
-        action: bindActionCreators(courseAction, dispatch)
-    };
-}
+const mapDispatchToProps = dispatch => ({
+    action: bindActionCreators(courseAction, dispatch)
+
+});
 
 
 
 CourseListContainer.propTypes = {
-    courses:    PropTypes.array,
-    action:     PropTypes.object.isRequired,
-    history:    PropTypes.object.isRequired
+    courses: PropTypes.array,
+    action: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
 };
 
 

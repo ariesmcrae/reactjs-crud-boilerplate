@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PageNotFound from './common/PageNotFound';
 import Home from './landing/Home';
 import CourseListContainer from './course/CourseListContainer'; // eslint-disable-line import/no-named-as-default
@@ -13,29 +13,29 @@ import HeaderNavContainer from './landing/HeaderNavContainer'; // eslint-disable
 const history = createBrowserHistory();
 
 
+const App = () => {
+    return (
+        <div >
+            <Router history={history}>
+                <div>
 
-export default class App extends React.Component {
-    render() {
-        return (
-            <div >
-                <Router history={history}>
-                    <div>
-                        
-                        <HeaderNavContainer/>
-                        
-                        <Switch>
-                            <Route exact path="/" component={Home}/>
-                            <Route path="/courses" component={CourseListContainer}/>
-                            <Route exact path="/course" component={AddOrEditCourseContainer}/>                
-                            <Route path="/course/:id" component={AddOrEditCourseContainer}/>
-                            <Route path="/about" component={About}/>                            
-                            <Route component={PageNotFound}/>
-                        </Switch>                        
+                    <HeaderNavContainer />
 
-                    </div>                        
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/courses" component={CourseListContainer} />
+                        <Route exact path="/course" component={AddOrEditCourseContainer} />
+                        <Route path="/course/:id" component={AddOrEditCourseContainer} />
+                        <Route path="/about" component={About} />
+                        <Route component={PageNotFound} />
+                    </Switch>
 
-                </Router>
-            </div>
-        );
-  }
-}
+                </div>
+
+            </Router>
+        </div>
+    );
+};
+
+
+export default App;

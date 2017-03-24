@@ -3,7 +3,7 @@ import initialState from './initialState';
 import _ from 'lodash';
 
 
-export default function selectedCourseReducer(state = initialState.selectedCourseReducer, action) {
+const selectedCourseReducer = (state = initialState.selectedCourseReducer, action) => {
     switch(action.type) {
 
         case ActionType.GET_COURSE_RESPONSE: {
@@ -16,4 +16,7 @@ export default function selectedCourseReducer(state = initialState.selectedCours
 
         default: { return state; }
     }
-}
+};
+
+
+export default selectedCourseReducer;

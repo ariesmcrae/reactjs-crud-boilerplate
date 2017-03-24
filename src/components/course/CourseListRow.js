@@ -8,7 +8,8 @@ const style = {
 };
 
 
-export default function CourseListRow({course, handleDelete}) {
+
+const CourseListRow = ({course, handleDelete}) => {
     return(
         <tr>
             <td><a href={course.watchHref} target="_blank">{course.title}</a></td>
@@ -19,12 +20,15 @@ export default function CourseListRow({course, handleDelete}) {
             <td><i className="fa fa-trash-o" aria-hidden="true" style={style} value={course.id} onClick={handleDelete}/></td>
         </tr>
     );    
-}
+};
 		
 
 
 
 CourseListRow.propTypes = {
     course: PropTypes.object.isRequired,
-    handleDelete: PropTypes.func.isRequired,
+    handleDelete: PropTypes.func.isRequired
 };
+
+
+export default CourseListRow;

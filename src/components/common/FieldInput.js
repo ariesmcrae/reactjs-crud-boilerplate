@@ -1,12 +1,8 @@
 import React, {PropTypes} from 'react';
 
 
-class FieldInput extends React.Component {
-    
-    render() {
-        const {input, type, name, label, placeholder, meta: {touched, error, warning}} = this.props;
-
-        return(
+const FieldInput = ({input, type, name, label, placeholder, meta: {touched, error, warning}}) => {
+    return(
             <div className="form-group">
                 <label htmlFor={name}>{label}</label>
 
@@ -22,10 +18,8 @@ class FieldInput extends React.Component {
                     {touched && ((error && <p className="text-danger">{error}</p>) || (warning && <p className="text-danger">{warning}</p>))}
                 </div>
             </div>
-        );
-    }
-
-}
+    );
+};
 
 
 
@@ -37,6 +31,7 @@ FieldInput.propTypes = {
     placeholder: PropTypes.string,
     meta: PropTypes.object.isRequired,
 };
+
 
 
 export default FieldInput;

@@ -3,7 +3,8 @@ import initialState from './initialState';
 import _ from 'lodash';
 
 
-export default function coursesReducer(state = initialState.coursesReducer, action) {
+
+const coursesReducer = (state = initialState.coursesReducer, action) => {
     switch(action.type) {
         case ActionType.GET_COURSES_RESPONSE: {
             // '...' spread operator clones the state
@@ -18,4 +19,8 @@ export default function coursesReducer(state = initialState.coursesReducer, acti
 
         default: { return state; }
     }
-}
+};
+
+
+
+export default coursesReducer;

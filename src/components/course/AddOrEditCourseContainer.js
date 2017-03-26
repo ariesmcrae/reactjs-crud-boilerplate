@@ -1,11 +1,11 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import toastr from 'toastr';
 import * as courseAction from '../../action/CourseAction';
 import * as authorAction from '../../action/AuthorAction';
 import CourseForm from './CourseForm'; // eslint-disable-line import/no-named-as-default
-import {authorsFormattedForDropdown} from '../../selectors/selectors'; // eslint-disable-line import/no-named-as-default
+import { authorsFormattedForDropdown } from '../../selectors/selectors'; // eslint-disable-line import/no-named-as-default
 
 
 export class AddOrEditCourseContainer extends React.Component {
@@ -23,8 +23,8 @@ export class AddOrEditCourseContainer extends React.Component {
         this.props.action.getCourseAction(this.props.match.params.id)
             .catch(error => {
                 toastr.error(error);
-            });   
-                    
+            });
+
         this.props.action.getAuthorsAction()
             .catch(error => {
                 toastr.error(error);
@@ -49,7 +49,7 @@ export class AddOrEditCourseContainer extends React.Component {
                 this.props.history.push('/courses');
             }).catch(error => {
                 toastr.error(error);
-            });     
+            });
     }
 
 
@@ -60,28 +60,28 @@ export class AddOrEditCourseContainer extends React.Component {
     }
 
 
-    
+
     render() {
-        const {initialValues} = this.props;
+        const { initialValues } = this.props;
         const heading = initialValues && initialValues.id ? 'Edit' : 'Add';
 
-        return(
+        return (
             <div className="container">
-                <CourseForm 
+                <CourseForm
                     heading={heading}
-                    authors={this.props.authors}                    
+                    authors={this.props.authors}
                     handleSave={this.handleSave}
                     handleCancel={this.handleCancel}
                     initialValues={this.props.initialValues}
                 />
-            </div> 
+            </div>
         );
     }
 }
 
 
 
-function mapStateToProps(state, ownProps) {
+const mapStateToProps = (state, ownProps) => {
     const courseId = ownProps.match.params.id; //from the path '/course/:id'
 
     if (courseId && state.selectedCourseReducer.course && courseId === state.selectedCourseReducer.course.id) {
@@ -94,15 +94,14 @@ function mapStateToProps(state, ownProps) {
             authors: authorsFormattedForDropdown(state.authorReducer.authors)
         };
     }
-}
+};
 
 
 
-function mapDispatchToProps(dispatch) {
-    return {
-        action: bindActionCreators({...authorAction, ...courseAction}, dispatch)
-    };
-}
+const mapDispatchToProps = dispatch => ({
+    action: bindActionCreators({ ...authorAction, ...courseAction }, dispatch)
+});
+
 
 
 AddOrEditCourseContainer.propTypes = {

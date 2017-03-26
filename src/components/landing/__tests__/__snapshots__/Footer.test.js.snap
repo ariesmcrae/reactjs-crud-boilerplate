@@ -70,7 +70,7 @@ exports[`Footer.test.js renders without crashing 1`] = `
         Unit Tests
       </h3>
       <p>
-        Mocha, Chai, Enzyme
+        Jest (comes with built in expect and code coverage)
       </p>
     </div>
   </div>

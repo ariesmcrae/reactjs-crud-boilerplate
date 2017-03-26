@@ -1,22 +1,67 @@
 exports[`CourseListContainer.test.js renders without crashing 1`] = `
 <div
-  className="container">
-  <h1>
-    Courses
-  </h1>
-  <button
-    className="btn btn-primary my-5"
-    onClick={[Function]}
-    type="button">
-    Add
-  </button>
-  <CourseList
-    courses={
-      Array [
-        Object {
-          "title": "Java The Good Pards",
-        },
-      ]
-    } />
+  className="container-fluid">
+  <div
+    className="row mt-3">
+    <div
+      className="col">
+      <h1>
+        Courses
+      </h1>
+    </div>
+  </div>
+  <div
+    className="row mt-3">
+    <div
+      className="col">
+      <div
+        className="btn-group"
+        role="group">
+        <button
+          className="btn btn-primary"
+          onClick={[Function]}
+          type="button">
+          <i
+            aria-hidden="true"
+            className="fa fa-plus" />
+           New
+        </button>
+        <button
+          className="btn btn-warning ml-2"
+          onClick={[Function]}
+          type="button">
+          <i
+            aria-hidden="true"
+            className="fa fa-pencil" />
+           Edit
+        </button>
+        <button
+          className="btn btn-danger ml-2"
+          onClick={[Function]}
+          type="button">
+          <i
+            aria-hidden="true"
+            className="fa fa-trash-o"
+            onClick={[Function]} />
+           Delete
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row">
+    <div
+      className="col">
+      <CourseList
+        courses={
+          Array [
+            Object {
+              "title": "Java The Good Pards",
+            },
+          ]
+        }
+        handleRowSelect={[Function]} />
+    </div>
+  </div>
 </div>
 `;

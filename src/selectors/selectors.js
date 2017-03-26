@@ -1,4 +1,4 @@
-export function authorsFormattedForDropdown(authors) {
+export const authorsFormattedForDropdown = authors => {
     if (!authors) {
         return;
     }
@@ -9,4 +9,4 @@ export function authorsFormattedForDropdown(authors) {
             text: `${author.firstName} ${author.lastName}`
         };
     });
-}
+};

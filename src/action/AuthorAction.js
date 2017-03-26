@@ -1,14 +1,12 @@
 import * as ActionType from './ActionType';
 import AuthorApi from '../api/AuthorApi';
-import {ApiCallBeginAction} from './ApiAction';
+import { ApiCallBeginAction } from './ApiAction';
 
 
-export function getAuthorsResponse(authors) {
-    return {
-        type: ActionType.GET_AUTHORS_RESPONSE,
-        authors
-    };
-}
+export const getAuthorsResponse = authors => ({
+    type: ActionType.GET_AUTHORS_RESPONSE,
+    authors
+});
 
 
 

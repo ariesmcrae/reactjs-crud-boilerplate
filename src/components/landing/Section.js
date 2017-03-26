@@ -1,6 +1,6 @@
 import React from 'react';
 import reactjs from '../../img/reactjs.jpg';
-import webpack2 from '../../img/webpack2.jpg';
+import createReactApp from '../../img/createReactApp.jpg';
 import reactrouter4 from '../../img/reactrouter4.jpg';
 import bootstrap4 from '../../img/bootstrap4.jpg';
 
@@ -25,12 +25,12 @@ const Section = () => {
 
             <div className="col-md-6 col-lg-3">
                 <div className="card">
-                    <a href="https://webpack.js.org" target="_blank">
-                        <img src={webpack2} className="card-img-top img-fluid" alt="Webpack 2"/>
+                    <a href="https://github.com/facebookincubator/create-react-app" target="_blank">
+                        <img src={createReactApp} className="card-img-top img-fluid" alt="Create React App"/>
                     </a>
                     <div className="card-block">
-                        <h3 className="card-title">Webpack 2</h3>
-                        <p>A module bundler for JavaScript apps.</p>
+                        <h3 className="card-title">create-react-app</h3>
+                        <p>Official. No Setup. Built in HMR, ESLint, Jest, Coverage</p>
                     </div>
                 </div>
             </div>

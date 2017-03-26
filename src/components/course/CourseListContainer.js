@@ -79,7 +79,7 @@ export class CourseListContainer extends React.Component {
         }
 
         return (
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row mt-3">
                     <div className="col">
                         <h1>Courses</h1>                        
@@ -94,7 +94,7 @@ export class CourseListContainer extends React.Component {
                                 className="btn btn-primary"
                                 onClick={this.handleAddCourse}
                             >
-                                <i className="fa fa-plus" aria-hidden="true"/> Add
+                                <i className="fa fa-plus" aria-hidden="true"/> New
                             </button>
 
                             <button

@@ -1,45 +1,203 @@
 exports[`CourseList.test.js renders without crashing 1`] = `
-<table
-  className="table table-striped">
-  <thead>
-    <tr>
-      <th>
-        Title
-      </th>
-      <th>
-        Author
-      </th>
-      <th>
-        Category
-      </th>
-      <th>
-        Length
-      </th>
-      <th>
-         
-      </th>
-      <th>
-         
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <CourseListRow
-      course={
-        Object {
-          "id": 1,
-          "title": "Java Clean Code",
-        }
+<BootstrapTable
+  bodyContainerClass={null}
+  bordered={false}
+  cellEdit={
+    Object {
+      "afterSaveCell": undefined,
+      "beforeSaveCell": undefined,
+      "blurToSave": false,
+      "mode": "none",
+      "nonEditableRows": undefined,
+    }
+  }
+  columnFilter={false}
+  condensed={true}
+  containerClass={null}
+  csvFileName="spreadsheet.csv"
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "title": "Java Clean Code",
+      },
+      Object {
+        "id": 2,
+        "title": "Java The Good Pards",
+      },
+    ]
+  }
+  deleteRow={false}
+  expandColumnOptions={
+    Object {
+      "expandColumnBeforeSelectColumn": true,
+      "expandColumnComponent": undefined,
+      "expandColumnVisible": false,
+    }
+  }
+  exportCSV={false}
+  fetchInfo={
+    Object {
+      "dataTotalSize": 0,
+    }
+  }
+  headerContainerClass={null}
+  height="100%"
+  hover={true}
+  ignoreSinglePage={false}
+  insertRow={false}
+  keyBoardNav={false}
+  multiColumnSearch={false}
+  multiColumnSort={1}
+  options={
+    Object {
+      "noDataText": "No data",
+      "sortIndicator": true,
+    }
+  }
+  pagination={false}
+  printable={false}
+  search={false}
+  selectRow={
+    Object {
+      "bgColor": "#c1f291",
+      "clickToSelect": true,
+      "hideSelectColumn": true,
+      "mode": "radio",
+      "onSelect": [Function],
+    }
+  }
+  striped={true}
+  tableBodyClass={null}
+  tableContainerClass={null}
+  tableHeaderClass={null}
+  trClassName="">
+  <TableHeaderColumn
+    className=""
+    columnClassName=""
+    columnTitle={false}
+    dataAlign="left"
+    dataField="id"
+    dataSort={false}
+    editColumnClassName=""
+    editable={true}
+    expandable={true}
+    filterFormatted={false}
+    headerTitle={true}
+    hidden={true}
+    hiddenOnInsert={false}
+    invalidEditColumnClassName=""
+    isKey={true}
+    searchable={true}
+    sortIndicator={true}
+    width={null}>
+    Id
+  </TableHeaderColumn>
+  <TableHeaderColumn
+    caretRender={[Function]}
+    className=""
+    columnClassName=""
+    columnTitle={true}
+    dataAlign="left"
+    dataField="title"
+    dataSort={true}
+    editColumnClassName=""
+    editable={true}
+    expandable={true}
+    filter={
+      Object {
+        "delay": 0,
+        "type": "TextFilter",
       }
-      handleDelete={[Function]} />
-    <CourseListRow
-      course={
-        Object {
-          "id": 2,
-          "title": "Java The Good Pards",
-        }
+    }
+    filterFormatted={false}
+    headerTitle={true}
+    hidden={false}
+    hiddenOnInsert={false}
+    invalidEditColumnClassName=""
+    isKey={false}
+    searchable={true}
+    sortIndicator={true}
+    width={null}>
+    Title
+  </TableHeaderColumn>
+  <TableHeaderColumn
+    caretRender={[Function]}
+    className=""
+    columnClassName=""
+    columnTitle={true}
+    dataAlign="left"
+    dataField="length"
+    dataSort={true}
+    editColumnClassName=""
+    editable={true}
+    expandable={true}
+    filterFormatted={false}
+    headerTitle={true}
+    hidden={false}
+    hiddenOnInsert={false}
+    invalidEditColumnClassName=""
+    isKey={false}
+    searchable={true}
+    sortIndicator={true}
+    width={null}>
+    Length
+  </TableHeaderColumn>
+  <TableHeaderColumn
+    caretRender={[Function]}
+    className=""
+    columnClassName=""
+    columnTitle={true}
+    dataAlign="left"
+    dataField="category"
+    dataSort={true}
+    editColumnClassName=""
+    editable={true}
+    expandable={true}
+    filter={
+      Object {
+        "delay": 0,
+        "type": "TextFilter",
       }
-      handleDelete={[Function]} />
-  </tbody>
-</table>
+    }
+    filterFormatted={false}
+    headerTitle={true}
+    hidden={false}
+    hiddenOnInsert={false}
+    invalidEditColumnClassName=""
+    isKey={false}
+    searchable={true}
+    sortIndicator={true}
+    width={null}>
+    Category
+  </TableHeaderColumn>
+  <TableHeaderColumn
+    caretRender={[Function]}
+    className=""
+    columnClassName=""
+    columnTitle={true}
+    dataAlign="left"
+    dataField="authorId"
+    dataSort={true}
+    editColumnClassName=""
+    editable={true}
+    expandable={true}
+    filter={
+      Object {
+        "delay": 0,
+        "type": "TextFilter",
+      }
+    }
+    filterFormatted={false}
+    headerTitle={true}
+    hidden={false}
+    hiddenOnInsert={false}
+    invalidEditColumnClassName=""
+    isKey={false}
+    searchable={true}
+    sortIndicator={true}
+    width={null}>
+    Author
+  </TableHeaderColumn>
+</BootstrapTable>
 `;

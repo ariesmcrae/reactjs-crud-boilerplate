@@ -38,21 +38,24 @@ export class CourseList extends React.Component {
 
 
     render() {
-        const selectRow = {
+        const selectRowProp = {
             mode: 'radio',
-            bgColor: 'rgb(238, 193, 213)',
-            onSelect: this.props.handleRowSelect
+            bgColor: '#c1f291',
+            onSelect: this.props.handleRowSelect,
+            clickToSelect: true, 
+            hideSelectColumn: true            
         };
-    
+
         return (
-            <BootstrapTable data={this.props.courses}  selectRow={selectRow}  options={this.options} bordered={false} striped>
-                <TableHeaderColumn dataField='id' isKey hidden>ID</TableHeaderColumn>
+            <BootstrapTable data={this.props.courses}  selectRow={selectRowProp}  options={this.options} bordered={false} striped hover condensed>
+                <TableHeaderColumn dataField='id' isKey hidden>Id</TableHeaderColumn>
                 
                 <TableHeaderColumn 
                     dataField='title' 
                     dataSort={true} 
                     caretRender={getCaret}
                     filter={{type: 'TextFilter', delay: 0 }}
+                    columnTitle
                 >
                     Title
                 </TableHeaderColumn>
@@ -61,6 +64,7 @@ export class CourseList extends React.Component {
                     dataField='length' 
                     dataSort={true}
                     caretRender={getCaret}
+                    columnTitle
                 >
                     Length
                 </TableHeaderColumn>
@@ -70,6 +74,7 @@ export class CourseList extends React.Component {
                     dataSort={true}
                     caretRender={getCaret}
                     filter={{type: 'TextFilter', delay: 0 }}
+                    columnTitle
                 >
                     Category
                 </TableHeaderColumn>  
@@ -79,6 +84,7 @@ export class CourseList extends React.Component {
                     dataSort={true}
                     caretRender={getCaret}
                     filter={{type: 'TextFilter', delay: 0 }}
+                    columnTitle
                 >
                     Author
                 </TableHeaderColumn>                                

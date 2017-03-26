@@ -30,21 +30,21 @@ exports[`Section.test.js renders without crashing 1`] = `
     <div
       className="card">
       <a
-        href="https://webpack.js.org"
+        href="https://github.com/facebookincubator/create-react-app"
         target="_blank">
         <img
-          alt="Webpack 2"
+          alt="Create React App"
           className="card-img-top img-fluid"
-          src="webpack2.jpg" />
+          src="createReactApp.jpg" />
       </a>
       <div
         className="card-block">
         <h3
           className="card-title">
-          Webpack 2
+          create-react-app
         </h3>
         <p>
-          A module bundler for JavaScript apps.
+          Official. No Setup. Built in HMR, ESLint, Jest, Coverage
         </p>
       </div>
     </div>

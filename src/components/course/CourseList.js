@@ -23,6 +23,12 @@ function getCaret(direction) {
 
 
 
+function titleFormatter(cell, row) {
+  return `<a href=${row.watchHref} target="_blank">${cell}</a>`;
+}
+
+
+
 export class CourseList extends React.Component {
 
     constructor() {
@@ -51,7 +57,8 @@ export class CourseList extends React.Component {
                 <TableHeaderColumn dataField='id' isKey hidden>Id</TableHeaderColumn>
                 
                 <TableHeaderColumn 
-                    dataField='title' 
+                    dataField='title'
+                    dataFormat={titleFormatter} 
                     dataSort={true} 
                     caretRender={getCaret}
                     filter={{type: 'TextFilter', delay: 0 }}

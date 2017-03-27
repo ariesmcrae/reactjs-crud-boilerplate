@@ -25,3 +25,5 @@ import _ from 'lodash';
 import toastr from 'toastr';
 
 import 'jquery';
+
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';

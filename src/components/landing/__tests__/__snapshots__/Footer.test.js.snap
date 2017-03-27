@@ -20,9 +20,9 @@ exports[`Footer.test.js renders without crashing 1`] = `
     <a
       className="nav-link"
       data-toggle="tab"
-      href="#livereload"
+      href="#unitTesting"
     >
-      Hot Reloading
+      Unit Tests
     </a>
     <a
       className="nav-link"
@@ -34,9 +34,9 @@ exports[`Footer.test.js renders without crashing 1`] = `
     <a
       className="nav-link"
       data-toggle="tab"
-      href="#unittests"
+      href="#others"
     >
-      Unit Tests
+      Others
     </a>
   </nav>
   <div
@@ -50,18 +50,7 @@ exports[`Footer.test.js renders without crashing 1`] = `
         Mock REST
       </h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </div>
-    <div
-      className="tab-pane"
-      id="livereload"
-    >
-      <h3>
-        Hot Reloading
-      </h3>
-      <p>
-        aka Live Reloading, aka Hot Module Replacement (HRM)
+        Custom written mock REST
       </p>
     </div>
     <div
@@ -77,14 +66,59 @@ exports[`Footer.test.js renders without crashing 1`] = `
     </div>
     <div
       className="tab-pane"
-      id="unittests"
+      id="unitTesting"
     >
       <h3>
-        Unit Tests
+        Unit Testing
       </h3>
-      <p>
-        Jest, Enzyme
-      </p>
+      <ul>
+        <li>
+          Jest
+        </li>
+        <li>
+          Enzyme
+        </li>
+        <li>
+          Nock
+        </li>
+        <li>
+          Expect assertion
+        </li>
+        <li>
+          Code coverage
+        </li>
+      </ul>
+    </div>
+    <div
+      className="tab-pane"
+      id="others"
+    >
+      <h3>
+        Others
+      </h3>
+      <ul>
+        <li>
+          Redux
+        </li>
+        <li>
+          Redux Form
+        </li>
+        <li>
+          Lodash
+        </li>
+        <li>
+          React Bootstrap Table
+        </li>
+        <li>
+          Font Awesome (for icons)
+        </li>
+        <li>
+          Hot Module Replacement (HMR)
+        </li>
+        <li>
+          nsp (Node Security) - scans vulnerabilities at dev startup
+        </li>
+      </ul>
     </div>
   </div>
 </footer>

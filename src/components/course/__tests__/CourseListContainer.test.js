@@ -23,7 +23,7 @@ describe('CourseListContainer.test.js', () => {
         const tree = toJson(wrapper);
         expect(tree).toMatchSnapshot();
 
-        expect(wrapper.find('button')).toHaveLength(1);
+        expect(wrapper.find('button')).toHaveLength(3);
     });
 
   

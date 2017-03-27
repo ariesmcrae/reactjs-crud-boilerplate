@@ -46,12 +46,18 @@ const Footer = () => {
                         <li>Font Awesome (for icons)</li>
                         <li>Hot Module Replacement (HMR)</li>
                         <li>nsp (Node Security) - scans vulnerabilities at dev startup</li>
+                        <li>Webpack2 CommonsChunkPlugin bundle splitting</li>
+                        <li> Dynamic HTML generation: html-webpack-plugin</li>
+                        <li>Asset gzip</li>
+                        <li>CSS minification: extract-text-webpack-plugin</li>
                     </ul>
                 </div>                
             </div>
         </footer>
     );
 };
+
+
 
 
 

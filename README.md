@@ -6,23 +6,19 @@
 
 ### Libraries used
 * ReactJs
-* Yarn
 * Express server
 * npm scripts
-* Node Security
+* Node Security (nsp)
 * Babel
-* Webpack 1.x
+* Webpack 2.x
 * ESLint, eslint-watch
 * Test Framework: Jest
-* Test Assertion: Chai
+* Test Assertion: Jest
 * Test Helper Library: Enzyme, JSDOM
-* Test Headless DOM: JSDOM - in memory DOM where tests are executed.
 * react-addons-test-utils: needed by Enzyme
-* WhatWG Fetch
 * Mock API Data: hand rolled
 * `webpack-hot-middleware` - hot module replacement when using `ExpressJs` as a server, rather than using `webpack-dev-server`.
 * `eslint-plugin-react`
-* JSDOM
 * react-router 4
 * toastr (unfortunately, I had to install jquery with it, as it wouldn't work without it)
 * lodash
@@ -31,6 +27,7 @@
 * Tether is required by Bootstrap 4
 * jquery is required by Bootstrap 4
 * thunk testing: nock (for mocking http calls), and redux-mock-store
+* React Bootstrap table
 
 ### Webpack plugins
 * Dynamic HTML generation: html-webpack-plugin

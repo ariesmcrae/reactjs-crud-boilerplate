@@ -61,7 +61,7 @@ export class CourseListContainer extends React.Component {
 
 
 
-    handleRowSelect(row, isSelected, e) {
+    handleRowSelect(row, isSelected) {
         if (isSelected) {
             this.setState({selectedCourseId: row.id});
         }

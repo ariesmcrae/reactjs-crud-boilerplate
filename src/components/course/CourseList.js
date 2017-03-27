@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-//import CourseListRow from './CourseListRow';
 
 
-function getCaret(direction) {
+
+const getCaret = direction => {
     if (direction === 'asc') {
         return (
             <span> <i className="fa fa-sort-asc" aria-hidden="true"/></span>
@@ -19,47 +19,48 @@ function getCaret(direction) {
     return (
         <span> <i className="fa fa-sort" aria-hidden="true" /></span>
     );
-}
+};
 
 
 
-function titleFormatter(cell, row) {
+const titleFormatter = (cell, row) => {
   return `<a href=${row.watchHref} target="_blank">${cell}</a>`;
-}
+};
 
 
 
-export class CourseList extends React.Component {
+class CourseList extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.options = {
             sortIndicator: true,
             noDataText: 'No data'
         };
+
+        this.selectRowProp = {
+            mode: 'radio',
+            bgColor: '#c1f291',
+            onSelect: props.handleRowSelect,
+            clickToSelect: true, 
+            hideSelectColumn: true            
+        };
     }
 
 
 
-
     render() {
-        const selectRowProp = {
-            mode: 'radio',
-            bgColor: '#c1f291',
-            onSelect: this.props.handleRowSelect,
-            clickToSelect: true, 
-            hideSelectColumn: true            
-        };
+
 
         return (
-            <BootstrapTable data={this.props.courses}  selectRow={selectRowProp}  options={this.options} bordered={false} striped hover condensed>
-                <TableHeaderColumn dataField='id' isKey hidden>Id</TableHeaderColumn>
+            <BootstrapTable data={this.props.courses}  selectRow={this.selectRowProp}  options={this.options} bordered={false} striped hover condensed>
+                <TableHeaderColumn dataField="id" isKey hidden>Id</TableHeaderColumn>
                 
                 <TableHeaderColumn 
-                    dataField='title'
+                    dataField="title"
                     dataFormat={titleFormatter} 
-                    dataSort={true} 
+                    dataSort={true}
                     caretRender={getCaret}
                     filter={{type: 'TextFilter', delay: 0 }}
                     columnTitle
@@ -68,7 +69,7 @@ export class CourseList extends React.Component {
                 </TableHeaderColumn>
 
                 <TableHeaderColumn 
-                    dataField='length' 
+                    dataField="length"
                     dataSort={true}
                     caretRender={getCaret}
                     columnTitle
@@ -77,7 +78,7 @@ export class CourseList extends React.Component {
                 </TableHeaderColumn>
 
                 <TableHeaderColumn 
-                    dataField='category' 
+                    dataField="category"
                     dataSort={true}
                     caretRender={getCaret}
                     filter={{type: 'TextFilter', delay: 0 }}
@@ -87,7 +88,7 @@ export class CourseList extends React.Component {
                 </TableHeaderColumn>  
 
                 <TableHeaderColumn 
-                    dataField='authorId' 
+                    dataField="authorId"
                     dataSort={true}
                     caretRender={getCaret}
                     filter={{type: 'TextFilter', delay: 0 }}

@@ -1,13 +1,12 @@
-# ReactJs CRUD Boilerplate
+# ReactJs CRUD Boilerplate [![Build Status](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate.svg?branch=master)](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate)
 
-## Demo
+
+## Demo (Live Interactive)
 [https://d3cmu8mv5wwijw.cloudfront.net](https://d3cmu8mv5wwijw.cloudfront.net)
 
 
 ## Preview
 <img src='https://github.com/ariesmcrae/ariesmcrae.github.com/blob/master/reactjs-crud-boilerplate.gif?raw=true' width='768' alt='Preview'>
-
-
 
 ## Prerequisite
 * Nodejs v6+

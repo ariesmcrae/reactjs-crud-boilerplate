@@ -1,4 +1,4 @@
-# ReactJs CRUD Boilerplate [![Build Status](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate.svg?branch=master)](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/ariesmcrae/reactjs-crud-boilerplate/badge.svg)](https://coveralls.io/github/ariesmcrae/reactjs-crud-boilerplate)
+# ReactJs CRUD Boilerplate [![Build Status](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate.svg?branch=master)](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/ariesmcrae/reactjs-crud-boilerplate/badge.svg)](https://coveralls.io/github/ariesmcrae/reactjs-crud-boilerplate) [![dependencies Status](https://david-dm.org/ariesmcrae/reactjs-crud-boilerplate/status.svg)](https://david-dm.org/ariesmcrae/reactjs-crud-boilerplate) [![devDependencies Status](https://david-dm.org/ariesmcrae/reactjs-crud-boilerplate/dev-status.svg)](https://david-dm.org/ariesmcrae/reactjs-crud-boilerplate?type=dev)
 
 
 ## Demo (Live Interactive)

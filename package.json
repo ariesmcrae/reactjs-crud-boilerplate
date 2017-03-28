@@ -29,6 +29,7 @@
     "toastr": "^2.1.2"
   },
   "devDependencies": {
+    "coveralls": "^2.12.0",
     "enzyme": "^2.8.0",
     "enzyme-to-json": "^1.5.0",
     "nock": "^9.0.9",
@@ -40,7 +41,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "coverage": "react-scripts test --watch --coverage",
+    "coverage": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
   }
 }

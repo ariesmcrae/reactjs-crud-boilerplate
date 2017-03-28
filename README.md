@@ -36,9 +36,12 @@ Open [http://localhost:3000](http://localhost:3000)<br>
 
 ## Libraries used
 * ReactJs
+* Redux
 * create-react-app
 * React Router 4
 * Bootstrap 4
+* redux-form
+* React Boostrap Table
 * Babel
 * ESLint
 * Test Runner: Jest

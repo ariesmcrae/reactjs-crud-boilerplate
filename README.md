@@ -1,10 +1,13 @@
 # ReactJs CRUD Boilerplate
 
 ## Demo
-TODO
+[https://d3cmu8mv5wwijw.cloudfront.net](https://d3cmu8mv5wwijw.cloudfront.net)
+
 
 ## Preview
-TODO
+<img src='https://github.com/ariesmcrae/ariesmcrae.github.com/blob/master/reactjs-crud-boilerplate.gif?raw=true' width='768' alt='Preview'>
+
+
 
 ## Prerequisite
 * Nodejs v6+
@@ -13,9 +16,9 @@ TODO
 
 ## Getting Started
 ```sh
-git clone https://github.com/ariesmcrae/todo.git
+git clone https://github.com/ariesmcrae/reactjs-crud-boilerplate.git
 
-cd todo/
+cd reactjs-crud-boilerplate
 
 yarn install
     or
@@ -25,7 +28,8 @@ yarn start
     or
 npm start
 ```
-Then open [http://localhost:3000/](http://localhost:3000/) to see your app.<br>
+
+Open [http://localhost:3000](http://localhost:3000)<br>
 
 
 ## Libraries used

@@ -1,4 +1,4 @@
-# ReactJs CRUD Boilerplate [![Build Status](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate.svg?branch=master)](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate)
+# ReactJs CRUD Boilerplate [![Build Status](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate.svg?branch=master)](https://travis-ci.org/ariesmcrae/reactjs-crud-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/ariesmcrae/reactjs-crud-boilerplate/badge.svg)](https://coveralls.io/github/ariesmcrae/reactjs-crud-boilerplate)
 
 
 ## Demo (Live Interactive)
@@ -51,6 +51,7 @@ Open [http://localhost:3000](http://localhost:3000)<br>
 * Tether
 * jquery
 * thunk testing: nock (for mocking http calls), and redux-mock-store
+* code coverage: Jest & coveralls
 
 
 ## Credits

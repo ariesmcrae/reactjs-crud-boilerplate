@@ -1,9 +1,9 @@
 {
   "name": "reactjs-crud-boilerplate",
-  "description": "ReactJS CRUD Starter Kit",
+  "description": "ReactJS CRUD Boilerplate",
   "version": "0.0.2",
   "main": "index.js",
-  "repository": "https://github.com/ariesmcrae/reactjs-crud-starter-kit.git",
+  "repository": "https://github.com/ariesmcrae/reactjs-crud-boilerplate.git",
   "author": "Aries McRae <github@ariesmcrae.com>",
   "license": "MIT",
   "keywords": [
@@ -21,7 +21,7 @@
     "lint:watch": "yarn lint -- --watch",
     "test": "jest",
     "test:watch": "yarn test --env=jsdom -- --watch",
-    "coverage": "jest --coverage --env=jsdom --watch",
+    "coverage": "jest --coverage --env=jsdom",
     "clean-dist": "node_modules/.bin/rimraf dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node scripts/build.js",

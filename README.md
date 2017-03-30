@@ -60,6 +60,23 @@ Open [http://localhost:3000](http://localhost:3000)<br>
 * code coverage: Jest & coveralls
 
 
+## Non create-react-app version
+It's located in the branch **non-create-react-app**.
+It uses hand crafted `Webpack 2`
+
+```sh
+git clone https://github.com/ariesmcrae/reactjs-crud-boilerplate.git
+
+cd reactjs-crud-boilerplate
+
+git checkout -b non-create-react-app origin/non-create-react-app
+
+yarn install
+
+yarn start
+```
+
+
 ## Credits
 This project took inspirations from :
 * `react-redux-react-router-es6` by @coryhouse

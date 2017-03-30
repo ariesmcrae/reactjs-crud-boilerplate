@@ -79,5 +79,5 @@ yarn start
 
 ## Credits
 This project took inspirations from :
-* `react-redux-react-router-es6` by @coryhouse
-* `bootstrap-4-playlist` by @iamshaunjp
+* [react-redux-react-router-es6](https://github.com/coryhouse/pluralsight-redux-starter) by [@coryhouse](https://twitter.com/housecor)
+* [bootstrap-4-playlist](https://github.com/iamshaunjp/bootstrap-4-playlist) by [@iamshaunjp](https://github.com/iamshaunjp)

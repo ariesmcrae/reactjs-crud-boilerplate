@@ -6,36 +6,29 @@
 
 ### Libraries used
 * ReactJs
+* Redux
+* Webpack 2.x
+* Bootstrap 4
+* react-router 4
+* React Bootstrap table
+* lodash
+* toastr
+* Fontawesome
+* Jest, Enzyme, Nock, redux-mock-store
+* ESLint, eslint-watch, eslint-plugin-react
+* Babel / ES6 aka ES2015
+* Node Security (nsp)
 * Express server
 * npm scripts
-* Node Security (nsp)
-* Babel
-* Webpack 2.x
-* ESLint, eslint-watch
-* Test Framework: Jest
-* Test Assertion: Jest
-* Test Helper Library: Enzyme, JSDOM
-* react-addons-test-utils: needed by Enzyme
 * Mock API Data: hand rolled
-* `webpack-hot-middleware` - hot module replacement when using `ExpressJs` as a server, rather than using `webpack-dev-server`.
-* `eslint-plugin-react`
-* react-router 4
-* toastr (unfortunately, I had to install jquery with it, as it wouldn't work without it)
-* lodash
-* Bootstrap 4
-* Fontawesome: because Bootstrap 4 no longer suppies glyphicons
-* Tether is required by Bootstrap 4
-* jquery is required by Bootstrap 4
-* thunk testing: nock (for mocking http calls), and redux-mock-store
-* React Bootstrap table
+* webpack-hot-middleware
+* Tether (required by Bootstrap 4)
+* jquery (required by Bootstrap 4 and toastr)
 
 ### Webpack plugins
 * Dynamic HTML generation: html-webpack-plugin
 * CSS minification: extract-text-webpack-plugin
 * Bundle splitting.
-
-
-
 
 ## Credits
 This project took inspirations from :

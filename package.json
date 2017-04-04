@@ -33,7 +33,7 @@
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "react": "^15.4.2",
-    "react-bootstrap-table": "^3.1.5",
+    "react-bootstrap-table": "^3.1.6",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router-dom": "^4.0.0",
@@ -80,7 +80,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.16.0",
     "url-loader": "^0.5.7",
-    "webpack": "^2.3.2",
+    "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-md5-hash": "^0.0.5"

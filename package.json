@@ -20,7 +20,7 @@
     "react": "^15.4.2",
     "react-bootstrap-table": "^3.4.1",
     "react-dom": "^15.4.2",
-    "react-redux": "^5.0.2",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
     "redux-form": "^6.8.0",

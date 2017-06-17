@@ -35,7 +35,7 @@
     "nock": "^9.0.13",
     "react-addons-test-utils": "^15.4.2",
     "react-scripts": "0.9.5",
-    "redux-mock-store": "^1.2.2"
+    "redux-mock-store": "^1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

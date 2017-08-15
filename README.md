@@ -4,9 +4,6 @@
 [![dependencies Status](https://david-dm.org/ariesmcrae/reactjs-crud-boilerplate/status.svg)](https://david-dm.org/ariesmcrae/reactjs-crud-boilerplate) [![devDependencies Status](https://david-dm.org/ariesmcrae/reactjs-crud-boilerplate/dev-status.svg)](https://david-dm.org/ariesmcrae/reactjs-crud-boilerplate?type=dev)
 
 
-## Demo (Live Interactive)
-[https://d3cmu8mv5wwijw.cloudfront.net](https://d3cmu8mv5wwijw.cloudfront.net)
-
 
 ## Preview
 <img src='https://github.com/ariesmcrae/ariesmcrae.github.com/blob/master/reactjs-crud-boilerplate.gif?raw=true' width='768' alt='Preview'>

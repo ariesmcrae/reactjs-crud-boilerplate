@@ -75,6 +75,7 @@ yarn start
 ```
 
 
+
 ## Credits
 This project took inspirations from :
 * [react-redux-react-router-es6](https://github.com/coryhouse/pluralsight-redux-starter) by [@coryhouse](https://twitter.com/housecor)
